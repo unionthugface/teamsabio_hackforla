@@ -8,6 +8,8 @@
 *.sln.docstates
 HiddenSettings.config
 HiddenConfig.config
+PublishScripts/*
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
