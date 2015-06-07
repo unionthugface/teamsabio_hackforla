@@ -23,6 +23,10 @@
 
         window.appInsights = appInsights;
         appInsights.trackPageView();
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        })
+        
     </script>
 </head>
 <body>
@@ -32,6 +36,7 @@
 
   
                 <a href="@Url.Action("Index", "Home")" class="brand-logo"><img class="responsive-img" src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
+                <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i class="mdi-navigation-menu"></i></a>
                 <ul class="right hide-on-med-and-down"> 
                     
                     <li><a href="/addimage" style="color:green">Submit a pLAnt</a></li> 
@@ -52,7 +57,7 @@
 
                 </ul>
                 <!-- Modal Structure -->
-
+                
                 <ul id="nav-mobile" class="side-nav" style="left: -250px;">
                     
                     <li><a href="/addimage/index" style="color:green">Submit a pLAnt</a></li>
@@ -70,7 +75,7 @@
                     <li>@Html.ActionLink("Login", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
                     <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>*@
                 </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i class="mdi-navigation-menu"></i></a>
+                
             </div>
         </nav>
     </div>
