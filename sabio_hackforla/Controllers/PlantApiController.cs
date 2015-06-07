@@ -37,7 +37,7 @@ namespace sabio_hackforla.Controllers
                 {
                     HttpPostedFile postedFile = httpRequest.Files[file];
 
-                    postedFilePath = Guid.NewGuid().ToString() + postedFile.FileName;
+                    postedFilePath = postedFile.FileName;
 
                     postedFile.SaveAs(serverPath + postedFilePath);
                 }
@@ -183,8 +183,8 @@ namespace sabio_hackforla.Controllers
 
             try
             {
-                //List<Plant> plants = _plantService.GetGarden(gardenGuid);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                List<GardenResponseModel> plants = _plantService.GetGarden(gardenGuid);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
