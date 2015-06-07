@@ -5,16 +5,12 @@ using System.Web;
 
 namespace sabio_hackforla.Constants
 {
-    public struct WaterNeedType
+    public enum WaterNeedType
     {
-        public const int Low = 0;
-
-        public const int ModLow = 1;
-
-        public const int Mod = 2;
-
-        public const int ModHigh = 3;
-
-        public const int High = 4;
+        Low = 1,
+        ModLow = 2,
+        Mod = 3,
+        ModHigh = 4,
+        High = 5
     }
 }
