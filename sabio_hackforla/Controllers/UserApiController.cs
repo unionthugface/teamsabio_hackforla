@@ -14,15 +14,19 @@ namespace sabio_hackforla.Controllers
     [RoutePrefix("api/UserLocation")]
     public class UserApiController : ApiController
     {
-    [Route(""),HttpGet]
+        [Route(""), HttpGet]
         public HttpResponseMessage GetLocation(User model)
         {
-            if (!ModelState.IsValid)
+            HttpResponseMessage resp = new HttpResponseMessage();
+            try
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                //User user = UserService.GetLocation(userid);
+                //resp = Request.CreateResponse<User>(HttpStatusCode.OK, user);
             }
-            HttpResponseMessage resp = null;
-
+            catch (Exception ex)
+            {
+                resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
             return resp;
         }
     }
