@@ -233,10 +233,8 @@
     <Compile Include="Constants\SoilType.cs" />
     <Compile Include="Constants\WaterNeedType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
-    <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,7 +251,6 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\GardenService.cs" />
     <Compile Include="Service\PlantService.cs" />
-    <Compile Include="Service\UserService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -313,12 +310,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Garden\MyGarden.cshtml" />
+    <Content Include="Views\Home\Recommendations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\UserApi\" />
-    <Folder Include="Views\UserService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
