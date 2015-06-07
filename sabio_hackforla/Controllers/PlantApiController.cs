@@ -37,10 +37,9 @@ namespace sabio_hackforla.Controllers
                 {
                     HttpPostedFile postedFile = httpRequest.Files[file];
 
-                    postedFilePath = postedFile.FileName + Guid.NewGuid().ToString();
+                    postedFilePath = Guid.NewGuid().ToString() + postedFile.FileName;
 
                     postedFile.SaveAs(serverPath + postedFilePath);
-                    Console.WriteLine("Upload 1 completed");
                 }
             }
             catch (Exception ex)
@@ -83,16 +82,16 @@ namespace sabio_hackforla.Controllers
             return resp;
         }
 
-        [Route("getplant"), HttpPost]
+        [Route("getplant"), HttpGet]
         public HttpResponseMessage GetPlantById(Guid plantId) 
         {
             //when you select that a plant is a match, this returns info on the plant
             HttpResponseMessage resp = null;
-
+         
             try
             {
-                //Plant plant = _plantService.GetPlantById(plantId);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plant);
+                PlantAdvancedModel plant = _plantService.GetPlantById(plantId);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plant);
             }
             catch (Exception ex)
             {
