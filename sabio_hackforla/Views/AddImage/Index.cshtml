@@ -1,8 +1,4 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-
-<link rel="=stylesheet" type="text/css" href="Dropzone.css" />
+﻿
 
 <h5>Click below to upload photos of your plant for more information</h5>
 
@@ -22,25 +18,30 @@
     <script type="text/javascript" src="~/Scripts/DropZone.js"></script>
     <script type="text/javascript">
 
-        
-        $(document).ready(function(){
-            postCall = function (e) {
-                e.preventDefault();
-                var form = $("#photo");
 
-                if(form.valid()){
-                    $.ajax({
-                        url: "/api/addImage",
-                        data: form,
-                        type: "POST",
-                        dataType: 'JPG'
-                    });
+        $(document).ready(function () { 
+        Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
+
+            // The configuration of dropzone
+            autoProcessQueue: true,
+            uploadMultiple: false,
+            parallelUploads: 1,
+            maxFiles: 1,
+
+            // Setting up of the dropzone
+            init: function () {
+                var myDropzone = this;
+                $("#sphoto").click(function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
                 }
-                else {
-                    console.log("Photo did not upload");
-                }
-            } 
+                );
+            }
+
+        }
         });
+        
 
     </script>
 }
