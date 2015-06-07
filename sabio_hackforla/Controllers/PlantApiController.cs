@@ -130,6 +130,8 @@ namespace sabio_hackforla.Controllers
                             break;
                     }
                 }
+
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
