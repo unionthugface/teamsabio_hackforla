@@ -16,5 +16,9 @@ namespace sabio_hackforla.Models
 
         public string Email { get; set; }
 
+        public decimal Lat { get; set; }
+
+        public decimal Lng { get; set; }
+
     }
 }

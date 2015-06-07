@@ -22,15 +22,25 @@
     <div class="navbar-fixed">
     <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container">
-            @Html.ActionLink("pLAnt", "Index", "Home", new { @class = "brand-logo" })
+           
+            <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
             <ul class="right hide-on-med-and-down">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("API", "Index", "Help")</li>
+                <li>@Html.ActionLink("Submit a pLAnt", "Index", "Help")</li>
+                <li>@Html.ActionLink("Volunteer", "Index", "Home")</li>
+                <li>@Html.ActionLink("Recommendations", "Index", "Help")</li>
+                <li>@Html.ActionLink("My Garden", "Index", "Home")</li>
+                <li>@Html.ActionLink("My Commnunity", "Index", "Help")</li>
+                <li>@Html.ActionLink("Login", "Index", "Help")</li>
             </ul>
 
             <ul id="nav-mobile" class="side-nav" style="left: -250px;">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("API", "Index", "Help")</li>
+                <li>@Html.ActionLink("Submit a pLAnt", "Index", "Help")</li>
+                <li>@Html.ActionLink("Volunteer", "Index", "Home")</li>
+                <li>@Html.ActionLink("Recommendations", "Index", "Help")</li>
+                <li>@Html.ActionLink("My Garden", "Index", "Home")</li>
+                <li>@Html.ActionLink("Login", "Index", "Help")</li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
