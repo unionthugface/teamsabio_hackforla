@@ -27,7 +27,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/euphorbia-myrsinites.jpg";
+            _plant.ImagePath = "/img/euphorbia-myrsinites.jpg";
             _plant.PlantType = PlantType.GroundCover;
             _plant.PlantDescription = "Euphorbia myrsinites is even tough than E. rigida, being hardy in all USDA zones to less than -10F. The leaf arrangements on the stems form blue-gray spirals.  Overall, this plant is only 6\"high x 12\" wide. Remove old, yellowing stems after flowering. E. myrsinites may be short-lived in warm winter areas. Native to southern Europe.";
             return _plant;
@@ -49,7 +49,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Fast;
             _plant.WaterNeed = WaterNeedType.Mod;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/oenothera-berlandieri.jpg";
+            _plant.ImagePath = "/img/oenothera-berlandieri.jpg";
             _plant.PlantType = PlantType.GroundCover;
             _plant.PlantDescription = "This hardy groundcover spreads by root sprouts, making it good for erosion control once established. It is native to East Texas and Mexico. Pink flowers cover the plant in spring. Sporadic flowering continues through the warm season.  It needs adequate water to remain attractive.";
             return _plant;
@@ -71,7 +71,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Mod;
             _plant.Evergreen = false;
-            _plant.ImagePath = "~/img/zauschneria-californica.jpg";
+            _plant.ImagePath = "/img/zauschneria-californica.jpg";
             _plant.PlantType = PlantType.GroundCover;
             _plant.PlantDescription = "Look for this Arizona and California native in riparian areas with year-round water.  Plants may be scraggly or lush depending on water availability. Tubular, fluorescent-orange flowers persist until frost.";
             return _plant;
