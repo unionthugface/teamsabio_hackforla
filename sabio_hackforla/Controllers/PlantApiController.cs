@@ -37,10 +37,9 @@ namespace sabio_hackforla.Controllers
                 {
                     HttpPostedFile postedFile = httpRequest.Files[file];
 
-                    postedFilePath = postedFile.FileName + Guid.NewGuid().ToString();
+                    postedFilePath = Guid.NewGuid().ToString() + postedFile.FileName;
 
                     postedFile.SaveAs(serverPath + postedFilePath);
-                    Console.WriteLine("Upload 1 completed");
                 }
             }
             catch (Exception ex)
