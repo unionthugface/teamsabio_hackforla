@@ -16,6 +16,13 @@ textarea {
     max-width: 280px;
 }
 
+@media (max-width: 600px) {
+    .brand-logo>img {
+        max-width: 80% !important;
+        padding: 2px 0;
+    }
+}
+
 /*Start of Dropzone CSS*/
 
 /*
@@ -554,8 +561,17 @@ div.leaf-background {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 20px;
-  /*padding-top: 100px;*/
-  margin-bottom: 20px;
-  border-radius: 20px;
+}
+
+div.cacti-background { 
+  background: url(img/single/cacti-garden-resize.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom: 150px;
+}
+
+.text-light {
+    font-weight: lighter;
 }
