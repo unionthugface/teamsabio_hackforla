@@ -36,8 +36,8 @@
         </div>
 
 
-<div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
-    <div class="container page-content">
+        <div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
+            <div class="container page-content">
 
                 <!--Uploaded Picture-->
                 <div class="row">
@@ -49,38 +49,91 @@
 
                 <!--Second Title-->
 
-        <div class="row">
+                <div class="row">
                     <div class="col s12 m12 l12">
                         <h4>Recommended</h4>
-            </div>
+                    </div>
 
-        </div>
+                </div>
+                <!--Cards-->
 
                 <div class="divider"></div>
                 <div class="section">
-        <div class="row">
+                    <div class="row">
+
                         <div class="col s12 m6 l3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
-                        <span class=" card-title">Card Title</span>
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
+                                    <span class=" card-title">Card Title</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        I am a drought-resistant plant.
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
+                                    <span class=" card-title">Card Title</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        I am a drought-resistant plant.
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
+                                    <span class=" card-title">Card Title</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        I am a drought-resistant plant.
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m6 l3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
+                                    <span class=" card-title">Card Title</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>
+                                        I am a drought-resistant plant.
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <p>
-                            I am a drought-resistant plant.
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+
+
+
             </div>
-        </div>
-                </div>
-
-
-
-    </div>
 
         </div>
 
@@ -93,7 +146,7 @@
         // ********START UP
         sabio.page.startUp = function () {
             sabio.services.garden.getRecommendations(sabio.page.getRecommendationsSuccess, sabio.page.getRecommendationsDropdownError);
-         
+
         };
 
 
