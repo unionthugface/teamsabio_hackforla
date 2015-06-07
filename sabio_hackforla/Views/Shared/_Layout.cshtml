@@ -20,30 +20,28 @@
 </head>
 <body>
     <div class="navbar-fixed">
-    <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container">
-           
-            <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
-            <ul class="right hide-on-med-and-down">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("API", "Index", "Help")</li>
-            </ul>
+        <nav class="#ffffff white" role="navigation">
+            <div class="nav-wrapper container">
 
-            <ul id="nav-mobile" class="side-nav" style="left: -250px;">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("API", "Index", "Help")</li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </div>
-    </nav>
+                <a href="@Url.Action("Index", "Home")" class="brand-logo"><img class="responsive-img" src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "green-text text-darken-3" })</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("API", "Index", "Help")</li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </nav>
     </div>
 
 
-    <div class="container">
-        <div class="section">
+    
             @RenderBody()
-        </div>
-    </div>
+        
 
 
 
