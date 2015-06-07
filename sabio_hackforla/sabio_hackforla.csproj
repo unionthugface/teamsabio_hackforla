@@ -242,6 +242,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
+    <Compile Include="Controllers\UploadApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
