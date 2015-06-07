@@ -47,12 +47,13 @@
     </div>
     <!--Card Reveals-->
     <div class="row valign">
-        <div class="center card small col s12 m4 l4">
+        <div class="center card small col s12 m4 l4" ng-repeat="gar in garden.item">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg/800px-Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg">
+                <img class="activator" ng-src={{gar.ImagePath}}>
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Flame Azalea<i class="mdi-navigation-more-vert right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">{{gar.PlantName}}<i class="mdi-navigation-more-vert right"></i></span>
+                <p><a href="/garden/list">Suggestions</a></p>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -60,7 +61,7 @@
                 <p>Flame azalea prefers moist soil but never soggy, waterlogged soil. This is why well-draining soil is so important. Water flame azalea generously when the top of the soil feels slightly dry, wetting the soil to a depth of 8 to 12 inches. Avoid overhead watering, and keep the foliage as dry as possible. Watering at the base of the plant with a garden hose or soaker is best, because this azalea is susceptible to fungal and bacterial diseases in humid conditions. Proper watering, adequate air circulation and a neat, tidy garden help prevent moisture-related diseases.</p>
             </div>
         </div>
-        <div class="center card small col s12 m4 l4">
+        @*<div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="http://128.253.192.70/users/dws/12_10_06/EriogonumArborescens/EriogonumArborescens3.JPG">
             </div>
@@ -126,8 +127,8 @@
                 <span class="card-title grey-text text-darken-4">Watering<i class="mdi-navigation-close right"></i></span>
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
-        </div>
-    </div>
+        </div>*@
+    @*</div>
     <div class="row valign">
         <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
@@ -141,7 +142,7 @@
                 <span class="card-title grey-text text-darken-4">Watering<i class="mdi-navigation-close right"></i></span>
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
-        </div>
+        </div>*@
     </div>
     <div class="divider"> <!--Stats--></div>
     <div class="row">
