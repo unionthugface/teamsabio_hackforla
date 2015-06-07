@@ -27,7 +27,7 @@ namespace sabio_hackforla.Controllers
         public HttpResponseMessage UploadImage()
         {
             var httpRequest = HttpContext.Current.Request;
-            var serverPath = System.Web.Hosting.HostingEnvironment.MapPath("~/tmp/");
+            var serverPath = HttpContext.Current.Server.MapPath("~/tmp/");
             string postedFilePath = null;
             //upload image to wherever we're uploading images to
             foreach (string file in httpRequest.Files)
