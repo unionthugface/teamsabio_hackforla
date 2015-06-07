@@ -238,7 +238,6 @@
     <Compile Include="Constants\WaterNeedType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddImageController.cs" />
-    <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndentificationController.cs" />
