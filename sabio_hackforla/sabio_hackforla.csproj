@@ -237,6 +237,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+
+    <Compile Include="Controllers\WeatherController.cs" />
+    <Compile Include="Data\RecommendDTO\DecorativeDTO.cs" />
+    <Compile Include="Data\RecommendDTO\GroundCoverDTO.cs" />
+    <Compile Include="Data\RecommendDTO\ShrubDTO.cs" />
+    <Compile Include="Data\RecommendDTO\TreeDTO.cs" />
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
