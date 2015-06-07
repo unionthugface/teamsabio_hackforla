@@ -3,9 +3,9 @@
 <h5>Click below to upload photos of your plant for more information</h5>
 
 <div>
-    <form action="/file-upload" class="dropzone" id="photo">
+    <form action="/plant/upload" method="post" class="dropzone" id="photo">
         <div class="fallback dropzone" id="myDropzone">
-            <input name="file" type="file" multiple />
+            <input name="image" type="file" enctype="multipart/form-data" multiple />
         </div>
     </form>
 </div>
@@ -18,7 +18,7 @@
     <script type="text/javascript" src="~/Scripts/DropZone.js"></script>
     <script type="text/javascript">
 
-
+        
         $(document).ready(function () { 
         Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
 
@@ -32,16 +32,16 @@
             init: function () {
                 var myDropzone = this;
                 $("#sphoto").click(function (e) {
-                    e.preventDefault();
+                e.preventDefault();
                     e.stopPropagation();
                     myDropzone.processQueue();
                 }
                 );
-            }
+                }
 
-        }
+            } 
         });
-        
+
 
     </script>
 }
