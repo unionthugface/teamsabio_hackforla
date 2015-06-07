@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "PlantPics";
+}
+
+<h2>PlantPics</h2>
+
+<form ng-submit="uploadPic" name="uploadPicForm" enctype="multipart/form-data">
+    <input name="file" type="file" id="file" file-model="fileToUpload" />
+    <input name="somethingINeed" type="submit" value="Upload" />
+</form> 
