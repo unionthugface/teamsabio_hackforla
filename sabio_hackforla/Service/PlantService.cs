@@ -18,7 +18,7 @@ namespace sabio_hackforla.Service
         private static String _BaseUrl = "http://garden.vsapi01.com/api-search/";
         
 
-        public String GetPlantFromJustVisual(string imagePath)
+        public JToken GetPlantFromJustVisual(string imagePath)
         {
             WebClient client = new WebClient();
             
@@ -26,8 +26,11 @@ namespace sabio_hackforla.Service
 
             uri = _BaseUrl + "by-url?url=" + imagePath + "&apiid=" + ApiId + "&apikey=" + ApiKey;
             string source = client.DownloadString(uri);
-            
-            return source;
+
+            JToken o = JToken.Parse(source);
+            //jSON.deserialize<Plant>(source);
+
+            return o;
         }
 
         public Plant GetPlantById(Guid plantId)
