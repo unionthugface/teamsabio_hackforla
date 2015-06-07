@@ -9,9 +9,11 @@ namespace sabio_hackforla.Service
 {
     public class UserService
     {
-        public static User GetLocation()
+        public static User GetLocation(int userId)
         {
-            User newUser = null;
+            User newUser = new User();
+            newUser.Lat = 0;
+            newUser.Lng = 0;
             return newUser;
         }
     }
