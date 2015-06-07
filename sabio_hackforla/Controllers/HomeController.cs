@@ -31,7 +31,7 @@ namespace sabio_hackforla.Controllers
             return View("~/Garden/MyGarden.cshtml");
         }
 
-        public ActionResult PlantPic() {
+        public ActionResult PlantPics() {
             return View();
         }
     }
