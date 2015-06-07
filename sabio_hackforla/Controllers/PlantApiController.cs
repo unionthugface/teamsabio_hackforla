@@ -27,7 +27,7 @@ namespace sabio_hackforla.Controllers
         public HttpResponseMessage UploadImage()
         {
             var httpRequest = HttpContext.Current.Request;
-            var serverPath = System.Web.Hosting.HostingEnvironment.MapPath("~/Content/img/upload/");
+            var serverPath = System.Web.Hosting.HostingEnvironment.MapPath("~/tmp/");
             string postedFilePath = null;
             //upload image to wherever we're uploading images to
             foreach (string file in httpRequest.Files)
@@ -39,7 +39,7 @@ namespace sabio_hackforla.Controllers
                 postedFile.SaveAs(serverPath + postedFilePath);
                 Console.WriteLine("Upload 1 completed");
             }
-            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/Content/img/upload/", postedFilePath);
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/tmp/", postedFilePath);
             //calls third-party api
             HttpResponseMessage resp = null;
             try
