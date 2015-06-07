@@ -13,6 +13,14 @@ namespace sabio_hackforla.Controllers
         [Route("upload"), HttpPost]
         public HttpResponseMessage UploadImage(string imagePath)
         {
+            //upload image to wherever we're uploading images to
+            HttpResponseMessage resp = null;
+
+            return resp;
+        }
+
+        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath)
+        {
             //calls third-party api
             HttpResponseMessage resp = null;
 
@@ -49,9 +57,9 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("garden:gardenGuid"), HttpGet]
-        public HttpResponseMessage GetGardenByGuid(Guid gardenGuid) 
+        public HttpResponseMessage GetGardenByGuid(Guid? gardenGuid = null) 
         { 
-            //get current user and return their garden of plants
+            //if gardenGuid is null, get user from context
             HttpResponseMessage resp = null;
 
             return resp;
