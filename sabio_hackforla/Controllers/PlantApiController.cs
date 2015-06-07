@@ -1,6 +1,9 @@
-﻿using sabio_hackforla.Models;
+﻿using Newtonsoft.Json.Linq;
+using sabio_hackforla.Constants;
+using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -28,15 +31,15 @@ namespace sabio_hackforla.Controllers
             return resp;
         }
 
-        [Route("jvquery"), HttpPost]
-        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath)
+        [Route("jvquery"), HttpGet]
+        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath = "http://c2.staticflickr.com/4/3467/3895548557_5ff7e67db2_n.jpg")
         {
             //calls third-party api
             HttpResponseMessage resp = null;
             try
             {
-                //List<Plant> plants = _plantService.GetPlantFromJustVisual(imagePath);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                string plants = _plantService.GetPlantFromJustVisual(imagePath);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
@@ -84,7 +87,7 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("recommend"), HttpGet]
-        public HttpResponseMessage GetLowWaterOptions(Guid plantId) 
+        public HttpResponseMessage GetLowWaterOptions(Guid? plantId = null) 
         {
             //send in a plant id and get low water options back
             HttpResponseMessage resp = null;
@@ -92,8 +95,8 @@ namespace sabio_hackforla.Controllers
             try
             {
                 //Plant plant = _plantService.GetPlantById(plantId);
-                //List<Plant> plants = _plantService.GetAlternativePlants(plant.PlantType);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                IEnumerable<PlantAdvancedModel> plants = _plantService.GetAlternativePlants(PlantType.Decorative);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {

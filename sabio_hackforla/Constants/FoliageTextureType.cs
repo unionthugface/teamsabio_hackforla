@@ -5,14 +5,10 @@ using System.Web;
 
 namespace sabio_hackforla.Constants
 {
-    public enum PlantType
+    public enum FoliageTextureType
     {
-        GroundCover = 1,
-
-        Shrub = 2,
-
-        Tree = 3,
-
-        Decorative = 4
+        Fine = 1,
+        Medium = 2,
+        Coarse = 3
     }
 }
