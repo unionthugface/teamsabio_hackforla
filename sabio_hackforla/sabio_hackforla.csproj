@@ -234,6 +234,7 @@
     <Compile Include="Constants\WaterNeedType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddImageController.cs" />
+    <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -259,6 +260,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -312,11 +314,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-
     <Content Include="Views\Home\Recommendations.cshtml" />
-
     <Content Include="Views\AddImage\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

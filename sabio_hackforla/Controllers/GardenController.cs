@@ -13,5 +13,12 @@ namespace sabio_hackforla.Controllers
         {
             return View("MyGarden");
         }
+
+
+        // GET: Recommendations
+        public ActionResult List()
+        {
+            return View("Recommendations");
+        }
     }
 }

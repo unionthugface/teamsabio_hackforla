@@ -1,21 +1,33 @@
-﻿using sabio_hackforla.Constants;
+﻿using Newtonsoft.Json.Linq;
+using sabio_hackforla.Constants;
 using sabio_hackforla.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Configuration;
 
 namespace sabio_hackforla.Service
 {
     public class PlantService
     {
-        public Plant GetPlantFromJustVisual(string imagePath)
+        private static String ApiKey = ConfigurationManager.AppSettings["ApiKey"];
+        private static String ApiId = ConfigurationManager.AppSettings["ApiId"];
+        private static String _BaseUrl = "http://garden.vsapi01.com/api-search/";
+        
+
+        public String GetPlantFromJustVisual(string imagePath)
         {
-            Plant plant = null;
             WebClient client = new WebClient();
-            client.BaseAddress = "http://garden.vsapi01.com/api-search/";
-            return plant;
+            
+            string uri;
+
+            uri = _BaseUrl + "by-url?url=" + imagePath + "&apiid=" + ApiId + "&apikey=" + ApiKey;
+            string source = client.DownloadString(uri);
+            
+            return source;
         }
 
         public Plant GetPlantById(Guid plantId)

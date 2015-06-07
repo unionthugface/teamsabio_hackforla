@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Recommendations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="left-align">Recommendations</h2>
+
+<div id="recommendationsContainer" name="recommendationsContainer">
+    <div class="container page-content">
+
+
+
+        <div class="row">
+            <div class="grid-example col s12 m6">
+                <span class="flow-text">I am full-width on mobile (col s12 m6)</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 m3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
+                        <span class=" card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            I am a drought-resistant plant.
+                        </p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+        //********F U N C T I O N S***
+
+        // ********START UP
+        sabio.page.startUp = function () {
+            sabio.services.garden.getRecommendations(sabio.page.getRecommendationsSuccess, sabio.page.getRecommendationsDropdownError);
+
+
+
+
+    </script>
+}
+
