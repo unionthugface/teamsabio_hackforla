@@ -7,8 +7,13 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">    
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular.js"></script>
     <script type="text/javascript" src="~/Scripts/plant.app.js"></script>
+    @RenderSection("pageInitScripts", required: false)
     <script type="text/javascript" src="~/Scripts/plant.ng.app.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-animate.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular-route.js"></script>
     <script type="text/javascript">
         var appInsights = window.appInsights || function (config) {
             function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
@@ -23,11 +28,11 @@
 <body>
     <div class="navbar-fixed">
         <nav class="#ffffff white" role="navigation">
-        <div class="nav-wrapper container">
-           
+            <div class="nav-wrapper container">
+
                 <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Content/img/logo/pLAnt_cursive_logo.png"></a>
                 <a href="@Url.Action("Index", "Home")" class="brand-logo"><img class="responsive-img" src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
-            <ul class="right hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage")</li>
                     <li>@Html.ActionLink("Volunteer", "Index", "Home")</li>
@@ -39,31 +44,38 @@
                                       
                     <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
-            </ul>
+                </ul>
                 <!-- Modal Structure -->
 
-            <ul id="nav-mobile" class="side-nav" style="left: -250px;">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage")</li>
                     <li>@Html.ActionLink("Volunteer", "Index", "Home")</li>
                     <li>@Html.ActionLink("Recommendations", "List", "Garden")</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden")</li>
                     <li>@Html.ActionLink("Login", "Index", "Help")</li>
                     <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </div>
-    </nav>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </nav>
     </div>
 
-
     
+        <div id="main-content" data-ng-app="plantApp">
+            <div ng-cloak>
             @RenderBody()
+            </div>
+        </div>
         
-
-
-
+         
+            @RenderBody()
+        </div>
    
+
+
+
+
     @Scripts.Render("~/bundles/jquery", "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js")
     @RenderSection("scripts", required: false)
 
