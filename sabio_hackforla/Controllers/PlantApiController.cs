@@ -28,7 +28,7 @@ namespace sabio_hackforla.Controllers
         {
             HttpResponseMessage resp = null;
             var httpRequest = HttpContext.Current.Request;
-            var serverPath = HttpContext.Current.Server.MapPath("~/img/");
+            var serverPath = HttpContext.Current.Server.MapPath("~/img/upload/");
             string postedFilePath = null;
             //upload image to wherever we're uploading images to
             try
@@ -37,7 +37,7 @@ namespace sabio_hackforla.Controllers
                 {
                     HttpPostedFile postedFile = httpRequest.Files[file];
 
-                    postedFilePath = Guid.NewGuid().ToString() + postedFile.FileName;
+                    postedFilePath = postedFile.FileName;
 
                     postedFile.SaveAs(serverPath + postedFilePath);
                 }
@@ -48,7 +48,7 @@ namespace sabio_hackforla.Controllers
                 return resp;
             }
             
-            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/img/", postedFilePath);
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/img/upload/", postedFilePath);
             //calls third-party api
             
             try
