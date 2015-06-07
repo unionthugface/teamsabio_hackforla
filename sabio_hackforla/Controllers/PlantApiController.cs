@@ -26,22 +26,32 @@ namespace sabio_hackforla.Controllers
         [Route("upload"), HttpPost]
         public HttpResponseMessage UploadImage()
         {
+            HttpResponseMessage resp = null;
             var httpRequest = HttpContext.Current.Request;
-            var serverPath = System.Web.Hosting.HostingEnvironment.MapPath("~/Content/img/upload/");
+            var serverPath = HttpContext.Current.Server.MapPath("~/img/");
             string postedFilePath = null;
             //upload image to wherever we're uploading images to
-            foreach (string file in httpRequest.Files)
+            try
             {
-                HttpPostedFile postedFile = httpRequest.Files[file];
+                foreach (string file in httpRequest.Files)
+                {
+                    HttpPostedFile postedFile = httpRequest.Files[file];
 
-                postedFilePath = postedFile.FileName;
+                    postedFilePath = postedFile.FileName + Guid.NewGuid().ToString();
 
-                postedFile.SaveAs(serverPath + postedFilePath);
-                Console.WriteLine("Upload 1 completed");
+                    postedFile.SaveAs(serverPath + postedFilePath);
+                    Console.WriteLine("Upload 1 completed");
+                }
             }
-            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/Content/img/upload", postedFilePath);
+            catch (Exception ex)
+            {
+                resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return resp;
+            }
+            
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/img/", postedFilePath);
             //calls third-party api
-            HttpResponseMessage resp = null;
+            
             try
             {
                 JToken plants = _plantService.GetPlantFromJustVisual(imagePath);
