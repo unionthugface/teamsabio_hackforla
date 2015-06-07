@@ -4,9 +4,11 @@ using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace sabio_hackforla.Controllers
@@ -22,10 +24,33 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("upload"), HttpPost]
-        public HttpResponseMessage UploadImage(string imagePath)
+        public HttpResponseMessage UploadImage()
         {
+            var httpRequest = HttpContext.Current.Request;
+            var serverPath = System.Web.Hosting.HostingEnvironment.MapPath("~/Content/img/upload/");
+            string postedFilePath = null;
             //upload image to wherever we're uploading images to
+            foreach (string file in httpRequest.Files)
+            {
+                HttpPostedFile postedFile = httpRequest.Files[file];
+
+                postedFilePath = postedFile.FileName;
+
+                postedFile.SaveAs(serverPath + postedFilePath);
+                Console.WriteLine("Upload 1 completed");
+            }
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/Content/img/upload", postedFilePath);
+            //calls third-party api
             HttpResponseMessage resp = null;
+            try
+            {
+                JToken plants = _plantService.GetPlantFromJustVisual(imagePath);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+            }
+            catch (Exception ex)
+            {
+                resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
 
             return resp;
         }
