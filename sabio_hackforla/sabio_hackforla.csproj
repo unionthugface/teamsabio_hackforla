@@ -240,6 +240,7 @@
     <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
+    <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\RecommendDTO\DecorativeDTO.cs" />
     <Compile Include="Data\RecommendDTO\GroundCoverDTO.cs" />
@@ -261,6 +262,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Service\GardenService.cs" />
     <Compile Include="Service\PlantService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +319,7 @@
     <Content Include="Scripts\plant.ng.app.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Garden\Frontyard.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -336,9 +339,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Recommendations.cshtml" />
     <Content Include="Views\AddImage\Index.cshtml" />
+    <Content Include="Views\Garden\MyGarden.cshtml" />
+    <Content Include="Views\Garden\Recommendations.cshtml" />
+    <Content Include="Views\PlantPics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserApi\" />
+    <Folder Include="Views\UserService\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
