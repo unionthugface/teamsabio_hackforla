@@ -3,7 +3,7 @@
 <h5>Click below to upload photos of your plant for more information</h5>
 
 <div>
-    <form action="/plant/upload" method="post" class="dropzone" id="photo">
+    <form action="/addimage/upload" method="post" class="dropzone" id="photo">
         <div class="fallback dropzone" id="myDropzone">
             <input name="image" type="file" enctype="multipart/form-data" multiple />
         </div>
@@ -19,7 +19,15 @@
     <script type="text/javascript">
 
         
-        $(document).ready(function () { 
+        $(document).ready(function () {
+
+            $('#photo').click(function () {
+                setTimeout(function () {
+                    window.location = '/indentification/index';
+                }, 2500);
+                
+            })
+
         Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
 
             // The configuration of dropzone

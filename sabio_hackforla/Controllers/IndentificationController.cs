@@ -9,8 +9,9 @@ namespace sabio_hackforla.Controllers
     public class IndentificationController : Controller
     {
         // GET: Matching
-        public ActionResult Index()
+        public ActionResult Index(string imagePath = "/img/")
         {
+            ViewBag.ImagePath = imagePath;
             return View();
         }
     }
