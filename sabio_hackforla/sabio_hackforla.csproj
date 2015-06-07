@@ -348,8 +348,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Recommendations.cshtml" />
-    <Content Include="Views\Home\Recommendations.cshtml" />
     <Content Include="Views\Home\PlantPics.cshtml" />
     <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\AddImage\Index.cshtml" />
