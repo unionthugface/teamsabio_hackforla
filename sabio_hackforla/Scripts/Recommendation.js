@@ -41,7 +41,8 @@ plant.page.recomControllerFactory = function ($scope, $baseController, $recomSer
 
     function _onSuccess(result) {
         viewModel.notify(function () {
-            viewModel.item = result.item;
+            viewModel.item = JSON.parse(result.responseText);
+            console.log(viewModel.item);
         });
     }
 
