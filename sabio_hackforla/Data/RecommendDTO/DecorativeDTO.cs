@@ -27,7 +27,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Slow;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/echinocactus-grusonii.jpg";
+            _plant.ImagePath = "/img/echinocactus-grusonii.jpg";
             _plant.PlantType = PlantType.Decorative;
             _plant.PlantDescription = "Beautiful golden spines make this cactus colorful year-round.  Native to southern Mexico, it prefers light shade, but can be acclimated to full sun.  Golden Barrel Cactus is most attractive in groupings and is suitable for use in large pots.  Water every two weeks in summer.";
             return _plant;
@@ -49,7 +49,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/lotus-rigidus.jpg";
+            _plant.ImagePath = "/img/lotus-rigidus.jpg";
             _plant.PlantType = PlantType.Decorative;
             _plant.PlantDescription = "This native to the Arizona Upland and chaparral does not do well in clay soils. Deer Vetch bears small, yellow, pea-shaped flowers in spring. The open blue-green foliage provides interesting texture making Deer Vetch a good contrast for plants with gray foliage.";
             return _plant;
@@ -71,7 +71,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/opuntia-acanthocarpa.jpg";
+            _plant.ImagePath = "/img/opuntia-acanthocarpa.jpg";
             _plant.PlantType = PlantType.Decorative;
             _plant.PlantDescription = "Buckhorn Cholla covers large areas of the Sonoran Desert.  It is similar to Staghorn Cholla from the southern part of Arizona.  Flower color is variable--yellow, orange, or rose. Flower buds are harvested by Native Americans and dried for food.";
             return _plant;
