@@ -18,9 +18,14 @@ namespace sabio_hackforla.Service
             return myGarden;
         }
 
-        public static void UpdateGarden(Garden garden)
+        public static Garden UpdateGarden(Plant plant)
         {
-            
+            Garden myGarden = new Garden();
+            myGarden.ListOfPlants = null;
+            myGarden.Neighborhood = null;
+            myGarden.Zipcode = 0;
+            myGarden.ListOfPlants.Add(plant);
+            return myGarden;
         }
 
         public static void InsertGarden(Garden garden)
