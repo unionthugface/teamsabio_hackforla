@@ -49,9 +49,9 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("garden:gardenGuid"), HttpGet]
-        public HttpResponseMessage GetGardenByGuid(Guid gardenGuid) 
+        public HttpResponseMessage GetGardenByGuid(Guid? gardenGuid = null) 
         { 
-            //get current user and return their garden of plants
+            //if gardenGuid is null, get user from context
             HttpResponseMessage resp = null;
 
             return resp;
