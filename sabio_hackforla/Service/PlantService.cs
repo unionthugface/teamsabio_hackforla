@@ -123,7 +123,7 @@ namespace sabio_hackforla.Service
             plant = new GardenResponseModel();
             plant.PlantName = "Hibiscus";
             plant.PlantDescription = "Liatris pycnostachya, known as the prairie blazing star, is a perennial plant that belongs to the aster family. There are thirty species of this particular wildflower in North America, seven of which reside in Indiana  - namely rough, northern, plains, cylindrical marsh and the prairie blazing star.";
-            plant.ImagePath = "~/img/yellow_hibiscus.jpg";
+            plant.ImagePath = "/img/yellow_hibiscus.jpg";
             plants.Add(plant);
 
             plant = new GardenResponseModel();
