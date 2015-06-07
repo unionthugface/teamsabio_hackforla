@@ -22,7 +22,8 @@
     <div class="navbar-fixed">
     <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container">
-            @Html.ActionLink("pLAnt", "Index", "Home", new { @class = "brand-logo" })
+           
+            <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
             <ul class="right hide-on-med-and-down">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("API", "Index", "Help")</li>
