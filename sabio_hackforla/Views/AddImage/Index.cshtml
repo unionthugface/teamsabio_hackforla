@@ -4,10 +4,10 @@
 
 <link rel="=stylesheet" type="text/css" href="Dropzone.css" />
 
-<h4>Upload A Plant Image For More Info</h4>
+<h5>Click below to upload photos of your plant for more information</h5>
 
 <div>
-    <form action="/file-upload" class="dropzone">
+    <form action="/file-upload" class="dropzone" id="photo">
         <div class="fallback dropzone" id="myDropzone">
             <input name="file" type="file" multiple />
         </div>
@@ -22,9 +22,25 @@
     <script type="text/javascript" src="~/Scripts/DropZone.js"></script>
     <script type="text/javascript">
 
+        
+        $(document).ready(function(){
+            postCall = function (e) {
+                e.preventDefault();
+                var form = $("#photo");
 
-
-    
+                if(form.valid()){
+                    $.ajax({
+                        url: "/api/addImage",
+                        data: form,
+                        type: "POST",
+                        dataType: 'JPG'
+                    });
+                }
+                else {
+                    console.log("Photo did not upload");
+                }
+            } 
+        });
 
     </script>
 }
