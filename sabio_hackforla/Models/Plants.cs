@@ -19,5 +19,6 @@ namespace sabio_hackforla.Models
 
         public SoilType SoilType { get; set; }
 
+        public WaterNeedType WaterNeed { get; set; }
     }
 }
