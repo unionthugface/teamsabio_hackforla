@@ -41,14 +41,14 @@ plant.page.gardenControllerFactory = function ($scope, $baseController, $gardenS
 
     function _onSuccess(result) {
         viewModel.notify(function () {
-            viewModel.item = result.item;
-            console.log("hello");
+            viewModel.item = JSON.parse(result.responseText);
         });
     }
 
-    function _onResultError(jqXhr, error) {
-        console.log("Danger Will Robinson, Danger!!!");
-        console.log(error);
+    function _onResultError(result) {
+        viewModel.notify(function () {
+            viewModel.item = JSON.parse(result.responseText);
+        });
     }
 }
 
