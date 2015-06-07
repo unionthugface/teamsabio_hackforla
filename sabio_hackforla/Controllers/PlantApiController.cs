@@ -149,8 +149,8 @@ namespace sabio_hackforla.Controllers
 
             try
             {
-                //List<Plant> plants = _plantService.GetGarden(gardenGuid);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                List<GardenResponseModel> plants = _plantService.GetGarden(gardenGuid);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
