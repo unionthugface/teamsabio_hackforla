@@ -82,16 +82,16 @@ namespace sabio_hackforla.Controllers
             return resp;
         }
 
-        [Route("getplant"), HttpPost]
+        [Route("getplant"), HttpGet]
         public HttpResponseMessage GetPlantById(Guid plantId) 
         {
             //when you select that a plant is a match, this returns info on the plant
             HttpResponseMessage resp = null;
-
+         
             try
             {
-                //Plant plant = _plantService.GetPlantById(plantId);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plant);
+                PlantAdvancedModel plant = _plantService.GetPlantById(plantId);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plant);
             }
             catch (Exception ex)
             {
