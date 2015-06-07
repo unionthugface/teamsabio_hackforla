@@ -17,7 +17,7 @@ namespace sabio_hackforla.Models
 
         public string PlantDescription { get; set; }
 
-        public string SoilType { get; set; }
+        public SoilType SoilType { get; set; }
 
     }
 }
