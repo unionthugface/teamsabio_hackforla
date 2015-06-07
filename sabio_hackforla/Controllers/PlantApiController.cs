@@ -46,6 +46,7 @@ namespace sabio_hackforla.Controllers
             catch (Exception ex)
             {
                 resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return resp;
             }
             
             string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/tmp/", postedFilePath);
