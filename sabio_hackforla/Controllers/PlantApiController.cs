@@ -13,6 +13,14 @@ namespace sabio_hackforla.Controllers
         [Route("upload"), HttpPost]
         public HttpResponseMessage UploadImage(string imagePath)
         {
+            //upload image to wherever we're uploading images to
+            HttpResponseMessage resp = null;
+
+            return resp;
+        }
+
+        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath)
+        {
             //calls third-party api
             HttpResponseMessage resp = null;
 
