@@ -3,39 +3,100 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="left-align">Recommendations</h2>
 
-<div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
-    <div class="container page-content">
+<head>
+    <title></title>
+    <style>
+        .container {
+            width: 80%;
+        }
+
+        .center {
+            margin: 0px auto;
+        }
+
+        .card {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .btn-floating {
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
         <div class="row">
-            <div class="grid-example col s12 m6">
-                <span class="flow-text">I am full-width on mobile (col s12 m6)</span>
+            <div class="center col s12 m12 l12">
+                <h2>Is your plant the best choice?</h2>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col s6 m3">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
-                        <span class=" card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>
-                            I am a drought-resistant plant.
-                        </p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
+
+
+        <div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
+            <div class="container page-content">
+
+                <!--Uploaded Picture-->
+                <div class="row">
+                    <div class="grid-example col s12 m4 l8">
+                        <span class="center flow-text">Your Plant</span>
+                        <img class="responsive-img" src="@ViewBag.Image"></div>
                 </div>
+
+                <!--Second Title-->
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>Recommended</h4>
+                    </div>
+
+                </div>
+                <!--Cards-->
+
+                <div class="divider"></div>
+                <div class="section">
+                    <div class="row">
+
+                        <!--Card-->
+                        <div id="recommendationTemplate" class="Template" ng-repeat="rec in recommendations.item">
+
+
+                            <!-- TEMPLATE - START -->
+
+                            <div class="col s12 m4 l3">
+                                <div class="card">
+
+                                    <div class="card-image">
+                                        <img data-ng-src={{rec.ImagePath}} />
+                                        <span class="card-title" data-ng-model="rec.LatinName">{{rec.LatinName}}</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{rec.WaterType}}</p>
+                                        <p class="truncate">{{rec.PlantDescription}}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="#">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
             </div>
+
         </div>
     </div>
-</div>
-<script src="~/Scripts/Recommendation.js"></script>
 
+</body>
 
-
-
+<script type="text/javascript" src="~/Scripts/Recommendation.js"></script>
 
 

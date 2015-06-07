@@ -80,6 +80,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -241,6 +242,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
+    <Compile Include="Controllers\UploadApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
@@ -254,6 +256,7 @@
     <Compile Include="Helpers\JsonSerializer.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GardenResponseModel.cs" />
     <Compile Include="Models\GeoCode.cs" />
     <Compile Include="Models\PlantAdvancedModel.cs" />
     <Compile Include="Models\User.cs" />
@@ -294,6 +297,7 @@
     <Content Include="img\lotus-rigidus.jpg" />
     <Content Include="img\oenothera-berlandieri.jpg" />
     <Content Include="img\opuntia-acanthocarpa.jpg" />
+    <Content Include="img\yellow_hibiscus.jpg" />
     <Content Include="img\zauschneria-californica.jpg" />
     <Content Include="Scripts\ai.0.15.0-build12287.js" />
     <Content Include="Scripts\ai.0.15.0-build12287.min.js" />
@@ -337,7 +341,6 @@
     <Content Include="Scripts\Recommendation.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Views\Garden\Frontyard.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -359,13 +362,13 @@
     <Content Include="Views\AddImage\Index.cshtml" />
     <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\Garden\Recommendations.cshtml" />
-    <Content Include="Views\Indentification\Index.cshtml" />
     <Content Include="Scripts\pLAnt\pLAnt.global.js" />
     <Content Include="Views\Weather\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="tmp\" />
+    <Folder Include="Views\Community\" />
     <Folder Include="Views\Matching\" />
     <Folder Include="Views\UserApi\" />
     <Folder Include="Views\UserService\" />

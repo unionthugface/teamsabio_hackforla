@@ -1,13 +1,9 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-
-<link rel="=stylesheet" type="text/css" href="Dropzone.css" />
+﻿
 
 <h5>Click below to upload photos of your plant for more information</h5>
 
 <div>
-    <form action="/plant/upload" method="post" class="dropzone" id="photo">
+    <form action="/addimage/upload" method="post" class="dropzone" id="photo">
         <div class="fallback dropzone" id="myDropzone">
             <input name="image" type="file" enctype="multipart/form-data" multiple />
         </div>
@@ -23,24 +19,37 @@
     <script type="text/javascript">
 
         
-        $(document).ready(function(){
-            postCall = function (e) {
-                e.preventDefault();
-                var form = $("#photo");
+        $(document).ready(function () {
 
-                if(form.valid()){
-                    $.ajax({
-                        url: "/plant/upload",
-                        data: form,
-                        type: "POST",
-                        dataType: 'JPG'
-                    });
+            $('#photo').click(function () {
+                setTimeout(function () {
+                    window.location = '/indentification/index';
+                }, 2500);
+                
+            })
+
+        Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
+
+            // The configuration of dropzone
+            autoProcessQueue: true,
+            uploadMultiple: false,
+            parallelUploads: 1,
+            maxFiles: 1,
+
+            // Setting up of the dropzone
+            init: function () {
+                var myDropzone = this;
+                $("#photo").click(function (e) {
+                e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
                 }
-                else {
-                    console.log("Photo did not upload");
+                );
                 }
+
             } 
         });
+
 
     </script>
 }

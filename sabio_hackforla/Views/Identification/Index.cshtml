@@ -1,0 +1,55 @@
+﻿
+<div class="container">
+	<div class="section">
+		<h3 class="center-align">Identify</h3>
+		<div class="row">
+			<div class="section" id="idControllerContainer" ng-controller="idController">
+				<div class="col s6 m6 green darken-1 z-depth-1"></div>
+				<div class="col s6 m6 green  z-depth-2"></div>
+			</div>
+			<div class="section container">
+				<p class="flow-text"> Is your plant <break> plant name here?</break></p>
+				<span>{{idController.id}}</span>
+			</div>
+			<div class="container valign-wrapper">
+				<a href="#">
+					<div class="col offset-s1 s4 valign">
+						<i class="medium mdi-action-thumb-up"></i>
+					</div>
+				</a>
+				<div class="col offset-s2 s4 valign ">
+					<i class="medium mdi-action-thumb-down" data-ng-submit="idController.submit()">Choose</i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts{
+@*	<script>*@
+		@*$(document).ready(
+			function () {
+				//inital photo handling
+
+				// secondary photo
+				var response,
+					plantList = {};
+				$.getJSON("/plant/jvquery", function onSuccess(response) {
+
+					plantList = response;
+					i = 0;
+
+					localStorage.setItem("Plants", response);
+					for (var i; i === response.length; i++) {
+						console.log(response.images.key + "," + response.image.value);
+					}
+				});
+			}
+			);
+
+		////  send thumbs down  to next result
+		//$('.mdi-action-thumb-down').click(function () {
+		//})
+	</script>*@
+	<script src="~/Scripts/plant.ng.identify.js" type="text/javascript"></script>
+}

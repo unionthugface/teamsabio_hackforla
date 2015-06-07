@@ -36,13 +36,13 @@ plant.page.recomControllerFactory = function ($scope, $baseController, $recomSer
 
 
     function render() {
-        viewModel.recomService.get(viewModel.receivedItems, viewModel.onResultError);
+        viewModel.recomService.get(viewModel.onResultError,viewModel.receivedItems);
     }
 
     function _onSuccess(result) {
         viewModel.notify(function () {
-            viewModel.item = result.item;
-            console.log("hello");
+            viewModel.item = JSON.parse(result.responseText);
+            console.log(viewModel.item);
         });
     }
 

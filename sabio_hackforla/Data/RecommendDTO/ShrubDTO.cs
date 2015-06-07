@@ -27,7 +27,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = false;
-            _plant.ImagePath = "~/img/caesalpinia-gilliesii.jpg";
+            _plant.ImagePath = "/img/caesalpinia-gilliesii.jpg";
             _plant.PlantType = PlantType.Shrub;
             _plant.PlantDescription = "Desert Bird of Paradise has relatively sparse foliage.  Flowers are medium yellow with long red stamens.  Mature size varies from 5' x 5' to 8' x 8' depending on water availability.\r\n\r\nNative to Argentina, the Desert Bird of Paradise is extremely drought-tolerant and cold-hardy to 5-10F.";
             return _plant;
@@ -49,7 +49,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Slow;
             _plant.WaterNeed = WaterNeedType.ModLow;
             _plant.Evergreen = false;
-            _plant.ImagePath = "~/img/fouquieria-splendens.jpg";
+            _plant.ImagePath = "/img/fouquieria-splendens.jpg";
             _plant.PlantType = PlantType.Shrub;
             _plant.PlantDescription = "Ocotillo is a shrub--not a cactus--native to the Sonoran and Chihuahuan Deserts up to 5,000'. The leaves drop during drought, thus dormancy depends on available soil moisture. Within three days after a monsoon the Ocotillo will be in full leaf. Its striking form and texture add interest to the landscape.";
             return _plant;
@@ -71,7 +71,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Slow;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = true;
-            _plant.ImagePath = "~/img/larrea-tridentata.jpg";
+            _plant.ImagePath = "/img/larrea-tridentata.jpg";
             _plant.PlantType = PlantType.Shrub;
             _plant.PlantDescription = "Small, bright, olive-green leaves contrast nicely with light-gray bark.  The branch structure is very graceful. Night lighting will enhance the sculptural quality of this open shrub. Creosote is native to all deserts in the U.S.";
             return _plant;
@@ -93,7 +93,7 @@ namespace sabio_hackforla.Data.RecommendDTO
             _plant.Growth = GrowthType.Mod;
             _plant.WaterNeed = WaterNeedType.Low;
             _plant.Evergreen = false;
-            _plant.ImagePath = "~/img/yellow_hibiscus.jpg";
+            _plant.ImagePath = "/img/yellow_hibiscus.jpg";
             _plant.PlantType = PlantType.Shrub;
             _plant.PlantDescription = "Hawaiian Hibiscus (Hibiscus brackenridgei) is the state flower of Hawaii. Hawaiian hibiscus is a moderately popular ornamental flower in Hawaii. Hawaiian hibiscus shrubs bear blooms almost every day, but the blossoms last only for a day even when on the bush.The striking and beautiful yellow Hawaiian hibiscus is also known as the pua aloalo or ma'o hau hele in the Hawaiian language.";
             return _plant;
