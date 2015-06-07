@@ -25,8 +25,19 @@
     <script>
         $(document).ready(
             function () {
-                localStorage.setItem();
-            });
+                var response,
+                    plantList = {};
+                $.getJSON("/plant/jvquery",  function onSuccess(response) {
+               
+                    plantList = JSON.parse(response)
+                    localStorage.setItem("Plants", JSON.parse(response));
+                    // TODO: create for each loop querying each object,  to be approved or denied;
+                   // plantList.forEach(function () {
+                   //     console.info(key + "," + value);
+                    //})
+                }
+            );
+        });
         //  send thumbs down  to next result
         $('.mdi-action-thumb-down').click(function () {
 
