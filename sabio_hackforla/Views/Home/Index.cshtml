@@ -1,27 +1,72 @@
-﻿<div class="row">
-    <div class="leaf-background">
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="leaf-background">
     <div class="section no-pad-bot">
         <div class="container">
-                <br><br>
-                <h1 class="header center grey-text text-lighten-2">How does your garden grow?</h1>
+            <br><br>
+            <h1 class="header center yellow-text lighten-3">How does <em>your</em> garden grow?</h1>
             <div class="row center">
-                    <h5 class="header col s12 white-text">Save Time &amp; Money in Garden Maintenance</h5>
+                <h5 class="header col s12 white-text">Save Time &amp; Money in Garden Maintenance</h5>
             </div>
             <div class="row center">
-                    <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+                <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
             </div>
-                <br><br>
+            <br><br>
         </div>
     </div>
+</div>
+<div class="teal lighten-2">
+    <div class="row" style="margin-bottom:0px;">
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center white-text"><i class="mdi-image-photo-camera"></i></h2>
+                <h5 class="center">Upload a Photo</h5>
+
+                <p class="light">Find a plant in a neighbor's garden that you like? Want more information on the plants in your own garden? Upload a photo of the plant in question and pLAnt will tell you what it is and how to care for it.</p>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center white-text"><i class="mdi-maps-local-florist"></i></h2>
+                <h5 class="center">Create Your Virtual Garden</h5>
+
+                <p class="light">MyGarden keeps all your uploaded photos and corresponding plant information in one place. You can view each plant's individual water consumption, as well as a water-consumption rating for your entire garden! View our Recommendations for drought-resistant native plants that save you time &amp; money.</p>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center white-text"><i class="mdi-social-group"></i></h2>
+                <h5 class="center">Join Your Community</h5>
+
+                <p class="light">Do your neighbor's few flowering plants use more water than your expansive native garden? Compare your garden's water consumption ratings, and see how your garden measures up to your community overall. Become a volunteer and help your neighbors make the switch to more drought-friendly plants.</p>
+            </div>
+        </div>
     </div>
 </div>
-    
-@section scripts{
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-<script type="text/javascript">
-    plant.layout.startUp = function() {
-        $(".button-collapse").sideNav();}
-</script>
+<div class="cacti-background">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br><br>
+            <h3 class="header center text-light yellow-text accent-2"><strong><em>Discover the Native Beauty of Los Angeles</em></strong></h3>
+            <div class="row center">
+                <h5 class="header col s12 white-text"><strong>Find Beautiful Drought-Resistant Plants for Your Garden</strong></h5>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
-    }
+@section scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        plant.layout.startUp = function () {
+            $(".button-collapse").sideNav();
+        }
+    </script>
+}

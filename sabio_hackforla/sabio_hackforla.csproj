@@ -274,6 +274,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.png" />
+    <Content Include="Content\img\single\cacti-garden-resize.jpg" />
+    <Content Include="Content\img\single\cacti-garden.jpg" />
     <Content Include="Content\img\single\leaf-crop.jpg" />
     <Content Include="Content\img\single\leaf.jpg" />
     <Content Include="Content\img\single\nature-sunny-summer-yellow.jpg" />
