@@ -1,21 +1,35 @@
-﻿using sabio_hackforla.Constants;
+﻿using Newtonsoft.Json.Linq;
+using sabio_hackforla.Constants;
+using sabio_hackforla.Data;
+using sabio_hackforla.Data.RecommendDTO;
 using sabio_hackforla.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Configuration;
 
 namespace sabio_hackforla.Service
 {
     public class PlantService
     {
-        public Plant GetPlantFromJustVisual(string imagePath)
+        private static String ApiKey = ConfigurationManager.AppSettings["ApiKey"];
+        private static String ApiId = ConfigurationManager.AppSettings["ApiId"];
+        private static String _BaseUrl = "http://garden.vsapi01.com/api-search/";
+        
+
+        public String GetPlantFromJustVisual(string imagePath)
         {
-            Plant plant = null;
             WebClient client = new WebClient();
-            client.BaseAddress = "http://garden.vsapi01.com/api-search/";
-            return plant;
+            
+            string uri;
+
+            uri = _BaseUrl + "by-url?url=" + imagePath + "&apiid=" + ApiId + "&apikey=" + ApiKey;
+            string source = client.DownloadString(uri);
+            
+            return source;
         }
 
         public Plant GetPlantById(Guid plantId)
@@ -24,9 +38,41 @@ namespace sabio_hackforla.Service
             return plant;
         }
 
-        public List<Plant> GetAlternativePlants(PlantType pType)
+        public IEnumerable<PlantAdvancedModel> GetAlternativePlants(PlantType pType)
         {
-            List<Plant> plants = null;
+            List<PlantAdvancedModel> plants = new List<PlantAdvancedModel>();
+                    
+            switch ((int)pType)
+            {
+                case (int)PlantType.GroundCover:
+                    GroundCoverDTO dto = new GroundCoverDTO();
+                    plants.Add(dto.GetEuphorbia());
+                    plants.Add(dto.GetOenothera());
+                    plants.Add(dto.GetZauschneria());
+                    break;
+
+                case (int)PlantType.Shrub:
+                    ShrubDTO shrubdto = new ShrubDTO();
+                    plants.Add(shrubdto.GetCaesalpinia());
+                    plants.Add(shrubdto.GetFouquieria());
+                    plants.Add(shrubdto.GetLarrea());
+                    break;
+
+                case (int)PlantType.Tree:
+                    TreeDTO treedto = new TreeDTO();
+                    plants.Add(treedto.GetBluePaloVerde());
+                    plants.Add(treedto.GetDesertWillow());
+                    plants.Add(treedto.GetSilkFloss());
+                    break;
+
+                case (int)PlantType.Decorative:
+                    DecorativeDTO decodto = new DecorativeDTO();
+                    plants.Add(decodto.GetEchinocactus());
+                    plants.Add(decodto.GetLotus());
+                    plants.Add(decodto.GetOpuntia());
+                    break;
+            }
+
             return plants;
         }
 

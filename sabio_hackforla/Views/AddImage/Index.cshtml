@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="=stylesheet" type="text/css" href="Dropzone.css" />
+
+<h4>Upload A Plant Image For More Info</h4>
+
+<div>
+    <form action="/file-upload" class="dropzone">
+        <div class="fallback dropzone" id="myDropzone">
+            <input name="file" type="file" multiple />
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+
+
+    <script type="text/javascript" src="~/Scripts/DropZone.js"></script>
+    <script type="text/javascript">
+
+
+
+    
+
+    </script>
+}

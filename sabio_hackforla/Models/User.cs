@@ -5,7 +5,7 @@ using System.Web;
 
 namespace sabio_hackforla.Models
 {
-    public class User
+    public class User 
     {
 
         public int Id { get; set; }
@@ -15,6 +15,10 @@ namespace sabio_hackforla.Models
         public string LastName {get; set;}
 
         public string Email { get; set; }
+
+        public decimal Lat { get; set; }
+
+        public decimal Lng { get; set; }
 
     }
 }
