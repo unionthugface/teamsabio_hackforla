@@ -6,7 +6,7 @@
     <title>pLAnt</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
     <script type="text/javascript" src="~/Scripts/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="~/Scripts/angular.js"></script>
     <script type="text/javascript" src="~/Scripts/plant.app.js"></script>
@@ -20,7 +20,7 @@
         }({
             instrumentationKey: "b6571ed8-35f9-4b85-bd1a-ecf1e38cd322"
         });
-        
+
         window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
@@ -41,7 +41,7 @@
                     <li>@Html.ActionLink("My Commnunity", "Index", "Help")</li>
                     <!--<li>Html.ActionLink("Login", "Index", "Help")</li>-->
                     <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
-                                      
+
                     <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
                 </ul>
@@ -54,26 +54,19 @@
                     <li>@Html.ActionLink("Recommendations", "List", "Garden")</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden")</li>
                     <li>@Html.ActionLink("Login", "Index", "Help")</li>
-                    <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
         </nav>
     </div>
 
-    
-        <div id="main-content" data-ng-app="plantApp">
-            <div ng-cloak>
-            @RenderBody()
-            </div>
-        </div>
-        
-         
+
+    <div id="main-content" data-ng-app="plantApp">
+        <div ng-cloak>
             @RenderBody()
         </div>
-   
-
-
+    </div>
 
 
     @Scripts.Render("~/bundles/jquery", "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js")
