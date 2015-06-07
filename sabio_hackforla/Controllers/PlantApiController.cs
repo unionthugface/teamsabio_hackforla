@@ -37,7 +37,7 @@ namespace sabio_hackforla.Controllers
                 {
                     HttpPostedFile postedFile = httpRequest.Files[file];
 
-                    postedFilePath = "1" + postedFile.FileName;
+                    postedFilePath = postedFile.FileName;
 
                     postedFile.SaveAs(serverPath + postedFilePath);
                 }
