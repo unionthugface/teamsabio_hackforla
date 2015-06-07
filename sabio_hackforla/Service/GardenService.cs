@@ -12,9 +12,15 @@ namespace sabio_hackforla.Service
         public static Garden GetGarden(int userId)
         {
             Garden myGarden = new Garden();
-            myGarden.ListOfPlants = null;
-            myGarden.Neighborhood = null;
-            myGarden.Zipcode = 0;
+            myGarden.ListOfPlants = new List<Plant>();
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.ListOfPlants.Add(PlantService.getPlant());
+            myGarden.Neighborhood = "Los Angeles";
+            myGarden.Zipcode = 90034;
             return myGarden;
         }
 
