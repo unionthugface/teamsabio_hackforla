@@ -359,7 +359,6 @@
     <Content Include="Views\AddImage\Index.cshtml" />
     <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\Garden\Recommendations.cshtml" />
-    <Content Include="Views\Indentification\Index.cshtml" />
     <Content Include="Scripts\pLAnt\pLAnt.global.js" />
     <Content Include="Views\Weather\Index.cshtml" />
   </ItemGroup>
