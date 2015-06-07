@@ -1,4 +1,6 @@
-﻿using System;
+﻿using sabio_hackforla.Models;
+using sabio_hackforla.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +20,10 @@ namespace sabio_hackforla.Controllers
         // GET: Recommendations
         public ActionResult List()
         {
+            Guid id = new Guid();
+            PlantService ps = new PlantService();
+            PlantAdvancedModel pam = ps.GetPlantById(id);
+            ViewBag.Image = pam.ImagePath;
             return View("Recommendations");
         }
     }
