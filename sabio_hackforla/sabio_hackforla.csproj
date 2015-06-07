@@ -229,21 +229,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Constants\FoliageTextureType.cs" />
+    <Compile Include="Constants\GrowthType.cs" />
     <Compile Include="Constants\PlantType.cs" />
+    <Compile Include="Constants\SeasonType.cs" />
     <Compile Include="Constants\SoilType.cs" />
     <Compile Include="Constants\WaterNeedType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AddImageController.cs" />
     <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
+    <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
+    <Compile Include="Data\RecommendDTO\DecorativeDTO.cs" />
+    <Compile Include="Data\RecommendDTO\GroundCoverDTO.cs" />
+    <Compile Include="Data\RecommendDTO\ShrubDTO.cs" />
+    <Compile Include="Data\RecommendDTO\TreeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GeoCode.cs" />
+    <Compile Include="Models\PlantAdvancedModel.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Gardens.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -251,8 +262,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
-    <Compile Include="Service\GardenService.cs" />
     <Compile Include="Service\PlantService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -261,12 +272,25 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
+    <Content Include="Content\img\logo\pLAnt_cursive_logo.png" />
     <Content Include="Content\img\single\leaf.jpg" />
     <Content Include="Content\img\single\nature-sunny-summer-yellow.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
+    <Content Include="img\caesalpinia-gilliesii.jpg" />
+    <Content Include="img\cercidium-floridum.jpg" />
+    <Content Include="img\chilopsis-linearis.jpg" />
+    <Content Include="img\chorisia-speciosa.jpg" />
+    <Content Include="img\echinocactus-grusonii.jpg" />
+    <Content Include="img\euphorbia-myrsinites.jpg" />
+    <Content Include="img\fouquieria-splendens.jpg" />
+    <Content Include="img\larrea-tridentata.jpg" />
+    <Content Include="img\lotus-rigidus.jpg" />
+    <Content Include="img\oenothera-berlandieri.jpg" />
+    <Content Include="img\opuntia-acanthocarpa.jpg" />
+    <Content Include="img\zauschneria-californica.jpg" />
     <Content Include="Scripts\ai.0.15.0-build12287.js" />
     <Content Include="Scripts\ai.0.15.0-build12287.min.js" />
     <Content Include="ApplicationInsights.config" />
@@ -283,12 +307,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\sabiohack4la.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Dropzone.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -296,9 +321,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\plant.app.js" />
     <Content Include="Scripts\plant.ng.app.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Garden\Frontyard.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -315,15 +342,28 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Recommendations.cshtml" />
+    <Content Include="Views\Home\Recommendations.cshtml" />
+    <Content Include="Views\Home\PlantPics.cshtml" />
+    <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\AddImage\Index.cshtml" />
+    <Content Include="Views\Garden\MyGarden.cshtml" />
+    <Content Include="Views\Garden\Recommendations.cshtml" />
+    <Content Include="Views\PlantPics.cshtml" />
+    <Content Include="Views\Indentification\Index.cshtml" />
+    <Content Include="Scripts\pLAnt\pLAnt.global.js" />
+    <Content Include="Views\Weather\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Matching\" />
+    <Folder Include="Views\UserApi\" />
+    <Folder Include="Views\UserService\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
