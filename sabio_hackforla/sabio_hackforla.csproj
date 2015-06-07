@@ -271,6 +271,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
+    <Content Include="Content\img\logo\pLAnt_cursive_logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -345,12 +346,13 @@
     <Content Include="Views\Garden\Recommendations.cshtml" />
     <Content Include="Views\PlantPics.cshtml" />
     <Content Include="Views\Indentification\Index.cshtml" />
+    <Content Include="Scripts\pLAnt\pLAnt.global.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Matching\" />
     <Folder Include="Views\UserApi\" />
     <Folder Include="Views\UserService\" />
-    <Folder Include="Views\Matching\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
