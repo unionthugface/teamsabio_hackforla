@@ -1,27 +1,18 @@
-﻿
-
-plant.page.startUp = function () {
-    plant.page.getGarden;
-}
-
-plant.page.getGarden = function (onSuccess, onError) {
-    var url = "/garden";
+﻿plant.page.getGarden = {};
+plant.page.getGarden.get = function (onSuccess, onError) {
+    var url = "/plant/garden/";
     var settings = {
         dataType: JSON,
-        type: get,
-        data:null,
+        type: "get",
+        data: null,
         success: onSuccess,
         error: onError,
     }
     $.ajax(url, settings);
 }
 
-plant.page.onSuccess = function (result) {
-
-}
-
-plant.page.onError = function (error) {
-
+plant.page.startUp = function () {
+    plant.page.gardenController = plant.ng.getControllerInstance($('#PlantControllerElement'));
 }
 
 plant.services.gardenfactory = function ($baseService) {
@@ -30,10 +21,10 @@ plant.services.gardenfactory = function ($baseService) {
     return newService;
 }
 
-plant.page.gardenControllerFactory = function ($scope, $baseController, gardenService) {
+plant.page.gardenControllerFactory = function ($scope, $baseController, $gardenService) {
     var viewModel = this;
     viewModel.item = null;
-    viewModel.gardenService = gardenService;
+    viewModel.gardenService = $gardenService;
     viewModel.receivedItems = _onSuccess;
     viewModel.onResultError = _onResultError;
 
@@ -45,12 +36,13 @@ plant.page.gardenControllerFactory = function ($scope, $baseController, gardenSe
 
 
     function render() {
-        viewModel.gardenService(viewModel.receivedItems, viewModel.onResultError);
+        viewModel.gardenService.get(viewModel.receivedItems, viewModel.onResultError);
     }
 
     function _onSuccess(result) {
         viewModel.notify(function () {
             viewModel.item = result.item;
+            console.log("hello");
         });
     }
 
@@ -61,12 +53,12 @@ plant.page.gardenControllerFactory = function ($scope, $baseController, gardenSe
 }
 
 plant.ng.addService(plant.ng.app.module,
-    "gardenService",
+    "$gardenService",
     ["$baseService"],
     plant.services.gardenfactory);
 
 plant.ng.addController(plant.ng.app.module,
     "gardenController",
-    ['$scope', '$baseController', 'gardenService'],
+    ['$scope', '$baseController', '$gardenService'],
     plant.page.gardenControllerFactory);
 
