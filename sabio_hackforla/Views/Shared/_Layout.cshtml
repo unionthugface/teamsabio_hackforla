@@ -61,13 +61,12 @@
     </nav>
     </div>
 
-
-    <div id="main-content" data-ng-app="plantApp">
-        <div ng-cloak>
+        <div id="main-content" data-ng-app="plantApp">
+            <div ng-cloak>
             @RenderBody()
+            </div>
         </div>
-    </div>
-
+        
 
     @Scripts.Render("~/bundles/jquery", "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js")
     @RenderSection("scripts", required: false)
