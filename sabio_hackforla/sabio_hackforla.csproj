@@ -239,6 +239,7 @@
     <Compile Include="Controllers\AddImageController.cs" />
     <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -249,7 +250,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\JsonSerializer.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GeoCode.cs" />
@@ -271,6 +271,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
+    <Content Include="Content\img\logo\pLAnt_cursive_logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -337,13 +338,19 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Recommendations.cshtml" />
+    <Content Include="Views\Home\PlantPics.cshtml" />
+    <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\AddImage\Index.cshtml" />
     <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\Garden\Recommendations.cshtml" />
     <Content Include="Views\PlantPics.cshtml" />
+    <Content Include="Views\Indentification\Index.cshtml" />
+    <Content Include="Scripts\pLAnt\pLAnt.global.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Matching\" />
     <Folder Include="Views\UserApi\" />
     <Folder Include="Views\UserService\" />
   </ItemGroup>
