@@ -243,11 +243,19 @@
     <Compile Include="Controllers\PlantApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> andrewsBranch
     <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Data\RecommendDTO\DecorativeDTO.cs" />
     <Compile Include="Data\RecommendDTO\GroundCoverDTO.cs" />
     <Compile Include="Data\RecommendDTO\ShrubDTO.cs" />
     <Compile Include="Data\RecommendDTO\TreeDTO.cs" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> andrewsBranch
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
