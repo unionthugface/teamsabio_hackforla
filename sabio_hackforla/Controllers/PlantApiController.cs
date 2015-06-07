@@ -1,9 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
-using sabio_hackforla.Constants;
-using sabio_hackforla.Models;
+﻿using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -87,7 +84,7 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("recommend"), HttpGet]
-        public HttpResponseMessage GetLowWaterOptions(Guid? plantId = null) 
+        public HttpResponseMessage GetLowWaterOptions(Guid plantId) 
         {
             //send in a plant id and get low water options back
             HttpResponseMessage resp = null;
@@ -95,8 +92,8 @@ namespace sabio_hackforla.Controllers
             try
             {
                 //Plant plant = _plantService.GetPlantById(plantId);
-                IEnumerable<PlantAdvancedModel> plants = _plantService.GetAlternativePlants(PlantType.Decorative);
-                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                //List<Plant> plants = _plantService.GetAlternativePlants(plant.PlantType);
+                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
