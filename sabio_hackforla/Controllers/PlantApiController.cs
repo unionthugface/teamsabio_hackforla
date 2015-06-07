@@ -39,7 +39,7 @@ namespace sabio_hackforla.Controllers
                 postedFile.SaveAs(serverPath + postedFilePath);
                 Console.WriteLine("Upload 1 completed");
             }
-            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/Content/img/upload", postedFilePath);
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/Content/img/upload/", postedFilePath);
             //calls third-party api
             HttpResponseMessage resp = null;
             try
