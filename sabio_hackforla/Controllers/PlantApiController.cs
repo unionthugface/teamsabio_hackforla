@@ -1,4 +1,5 @@
-﻿using sabio_hackforla.Models;
+﻿using Newtonsoft.Json.Linq;
+using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace sabio_hackforla.Controllers
             HttpResponseMessage resp = null;
             try
             {
-                string plants = _plantService.GetPlantFromJustVisual(imagePath);
+                JToken plants = _plantService.GetPlantFromJustVisual(imagePath);
                 resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)

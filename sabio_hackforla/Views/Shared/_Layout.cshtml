@@ -7,14 +7,16 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">    
+    <script type="text/javascript" src="~/Scripts/plant.app.js"></script>
+    <script type="text/javascript" src="~/Scripts/plant.ng.app.js"></script>
     <script type="text/javascript">
-        var appInsights=window.appInsights||function(config){
-            function s(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},r=document,f=window,e="script",o=r.createElement(e),i,u;for(o.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",r.getElementsByTagName(e)[0].parentNode.appendChild(o),t.cookie=r.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace"];i.length;)s("track"+i.pop());return config.disableExceptionTracking||(i="onerror",s("_"+i),u=f[i],f[i]=function(config,r,f,e,o){var s=u&&u(config,r,f,e,o);return s!==!0&&t["_"+i](config,r,f,e,o),s}),t
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
         }({
-            instrumentationKey:"b6571ed8-35f9-4b85-bd1a-ecf1e38cd322"
+            instrumentationKey: "b6571ed8-35f9-4b85-bd1a-ecf1e38cd322"
         });
         
-        window.appInsights=appInsights;
+        window.appInsights = appInsights;
         appInsights.trackPageView();
     </script>
 </head>
@@ -31,8 +33,11 @@
                     <li>@Html.ActionLink("Recommendations", "List", "Garden")</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden")</li>
                     <li>@Html.ActionLink("My Commnunity", "Index", "Help")</li>
-                    <li>@Html.ActionLink("Login", "Index", "Help")</li>
+                    <!--<li>Html.ActionLink("Login", "Index", "Help")</li>-->
+                    <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
+                                      
                 </ul>
+                <!-- Modal Structure -->
 
                 <ul id="nav-mobile" class="side-nav" style="left: -250px;">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -41,12 +46,12 @@
                     <li>@Html.ActionLink("Recommendations", "List", "Garden")</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden")</li>
                     <li>@Html.ActionLink("Login", "Index", "Help")</li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
         </nav>
     </div>
-
 
     <div class="container">
         <div class="section">
