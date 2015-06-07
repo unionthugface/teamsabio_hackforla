@@ -28,15 +28,15 @@ namespace sabio_hackforla.Controllers
             return resp;
         }
 
-        [Route("jvquery"), HttpPost]
-        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath)
+        [Route("jvquery"), HttpGet]
+        public HttpResponseMessage GetJustVisualResultsByImage(string imagePath = "http://c2.staticflickr.com/4/3467/3895548557_5ff7e67db2_n.jpg")
         {
             //calls third-party api
             HttpResponseMessage resp = null;
             try
             {
-                //List<Plant> plants = _plantService.GetPlantFromJustVisual(imagePath);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                string plants = _plantService.GetPlantFromJustVisual(imagePath);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
             }
             catch (Exception ex)
             {
