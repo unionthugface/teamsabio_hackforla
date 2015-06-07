@@ -81,8 +81,8 @@ namespace sabio_hackforla.Controllers
 
             try
             {
-                //Plant plant = _plantService.GetPlantById(plantId);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plant);
+                PlantAdvancedModel plant = _plantService.GetPlantById(plantId);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plant);
             }
             catch (Exception ex)
             {
