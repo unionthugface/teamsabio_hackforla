@@ -327,6 +327,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MyGarden.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\plant.app.js" />
     <Content Include="Scripts\plant.ng.app.js" />
