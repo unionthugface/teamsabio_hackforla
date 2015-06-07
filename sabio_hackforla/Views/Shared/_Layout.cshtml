@@ -34,11 +34,18 @@
                 <a href="@Url.Action("Index", "Home")" class="brand-logo"><img class="responsive-img" src="~/Content/img/logo/pLAnt_cursive_logo.jpg"></a>
                 <ul class="right hide-on-med-and-down">
                     
-                    <li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage", new { @class = "green-text text-darken-3" })</li>
+                    <li><a href="/addimage/index" style="color:green">Submit a pLAnt</a></li>
+                    @*<li><a href="" style="color:green">Volunteer</a></li>*@
+                    <li><a href="/garden/list" style="color:green">Recommendations</a></li>
+                    <li><a href="/garden" style="color:green">My Garden</a></li>
+                    @*<li><a href="" style="color:green">My Community</a></li>*@
+                    
+    
+                    @*<li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("Volunteer", "Index", "Home", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("Recommendations", "List", "Garden", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden", new { @class = "green-text text-darken-3" })</li>
-                    <li>@Html.ActionLink("My Community", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
+                    <li>@Html.ActionLink("My Community", "Index", "Help", new { @class = "green-text text-darken-3" })</li>*@
                     
                     <li><a class="waves-effect waves-light btn modal-trigger" href=" #modal1">Login</a></li>
 
@@ -48,12 +55,20 @@
 
                 <ul id="nav-mobile" class="side-nav" style="left: -250px;">
                     
-                    <li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage", new { @class = "green-text text-darken-3" })</li>
+                    <li><a href="/addimage/index" style="color:green">Submit a pLAnt</a></li>
+                    @*<li><a href="" style="color:green">Volunteer</a></li>*@
+                    <li><a href="/garden/list" style="color:green">Recommendations</a></li>
+                    <li><a href="/garden" style="color:green">My Garden</a></li>
+                    @*<li><a href="" style="color:green">My Community</a></li>*@
+                    
+                    
+                    
+                    @*<li>@Html.ActionLink("Submit a pLAnt", "Index", "AddImage", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("Volunteer", "Index", "Home", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("Recommendations", "List", "Garden", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("My Garden", "Index", "Garden", new { @class = "green-text text-darken-3" })</li>
                     <li>@Html.ActionLink("Login", "Index", "Help", new { @class = "green-text text-darken-3" })</li>
-                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a></li>*@
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
