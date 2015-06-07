@@ -22,5 +22,7 @@ namespace sabio_hackforla.Models
         public WaterNeedType WaterNeed { get; set; }
 
         public List<GeoCode> Locations { get; set; }
+
+        public string ImagePath { get; set; }
     }
 }
