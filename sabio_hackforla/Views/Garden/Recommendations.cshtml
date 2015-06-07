@@ -3,21 +3,63 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="left-align">Recommendations</h2>
 
-<div id="recommendationsContainer" name="recommendationsContainer">
-    <div class="container page-content">
+<head>
+    <title></title>
+    <style>
+        .container {
+            width: 80%;
+        }
 
+        .center {
+            margin: 0px auto;
+        }
 
+        .card {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
 
+        .btn-floating {
+            text-transform: lowercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
         <div class="row">
-            <div class="grid-example col s12 m6">
-                <span class="flow-text">I am full-width on mobile (col s12 m6)</span>
+            <div class="center col s12 m12 l12">
+                <h2>Is your plant the best choice?</h2>
             </div>
+
         </div>
 
+
+<div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
+    <div class="container page-content">
+
+                <!--Uploaded Picture-->
+                <div class="row">
+                    <div class="grid-example col s12">
+                        <span class="center flow-text">Your Uploaded Picture</span>
+                        <img class="responsive-img" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg/800px-Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg" />
+                    </div>
+                </div>
+
+                <!--Second Title-->
+
         <div class="row">
-            <div class="col s6 m3">
+                    <div class="col s12 m12 l12">
+                        <h4>Recommended</h4>
+            </div>
+
+        </div>
+
+                <div class="divider"></div>
+                <div class="section">
+        <div class="row">
+                        <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image">
                         <img src="http://img2-2.timeinc.net/toh/i/g/0706_annuals/drought-resistant-01.jpg" />
@@ -34,23 +76,27 @@
                 </div>
             </div>
         </div>
+                </div>
 
 
 
     </div>
-</div>
+
+        </div>
+
+    </div>
+
+</body>
 
 
-
-@section Scripts{
-    <script type="text/javascript">
-
-        //********F U N C T I O N S***
 
         // ********START UP
         sabio.page.startUp = function () {
             sabio.services.garden.getRecommendations(sabio.page.getRecommendationsSuccess, sabio.page.getRecommendationsDropdownError);
+         
         };
+
+
     </script>
 }
 

@@ -4,9 +4,11 @@ using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace sabio_hackforla.Controllers
@@ -22,10 +24,42 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("upload"), HttpPost]
-        public HttpResponseMessage UploadImage(string imagePath)
+        public HttpResponseMessage UploadImage()
         {
-            //upload image to wherever we're uploading images to
             HttpResponseMessage resp = null;
+            var httpRequest = HttpContext.Current.Request;
+            var serverPath = HttpContext.Current.Server.MapPath("~/img/");
+            string postedFilePath = null;
+            //upload image to wherever we're uploading images to
+            try
+            {
+                foreach (string file in httpRequest.Files)
+                {
+                    HttpPostedFile postedFile = httpRequest.Files[file];
+
+                    postedFilePath = Guid.NewGuid().ToString() + postedFile.FileName;
+
+                    postedFile.SaveAs(serverPath + postedFilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+                return resp;
+            }
+            
+            string imagePath = String.Format("http://{0}{1}{2}", HttpContext.Current.Request.Url.Host, "/img/", postedFilePath);
+            //calls third-party api
+            
+            try
+            {
+                JToken plants = _plantService.GetPlantFromJustVisual(imagePath);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+            }
+            catch (Exception ex)
+            {
+                resp = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
 
             return resp;
         }
@@ -48,16 +82,16 @@ namespace sabio_hackforla.Controllers
             return resp;
         }
 
-        [Route("getplant"), HttpPost]
+        [Route("getplant"), HttpGet]
         public HttpResponseMessage GetPlantById(Guid plantId) 
         {
             //when you select that a plant is a match, this returns info on the plant
             HttpResponseMessage resp = null;
-
+         
             try
             {
-                //Plant plant = _plantService.GetPlantById(plantId);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plant);
+                PlantAdvancedModel plant = _plantService.GetPlantById(plantId);
+                resp = Request.CreateResponse(HttpStatusCode.OK, plant);
             }
             catch (Exception ex)
             {

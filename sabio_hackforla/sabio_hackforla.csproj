@@ -276,6 +276,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.jpg" />
     <Content Include="Content\img\logo\pLAnt_cursive_logo.png" />
+    <Content Include="Content\img\single\leaf-crop.jpg" />
     <Content Include="Content\img\single\leaf.jpg" />
     <Content Include="Content\img\single\nature-sunny-summer-yellow.jpg" />
     <Content Include="favicon.ico" />
@@ -329,12 +330,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MyGarden.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\plant.app.js" />
     <Content Include="Scripts\plant.ng.app.js" />
+    <Content Include="Scripts\Recommendation.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Views\Garden\Frontyard.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -362,6 +364,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="tmp\" />
     <Folder Include="Views\Matching\" />
     <Folder Include="Views\UserApi\" />
     <Folder Include="Views\UserService\" />
