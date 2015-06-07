@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using sabio_hackforla.Constants;
 using sabio_hackforla.Models;
 using sabio_hackforla.Service;
 using System;
@@ -85,16 +86,50 @@ namespace sabio_hackforla.Controllers
         }
 
         [Route("recommend"), HttpGet]
-        public HttpResponseMessage GetLowWaterOptions(Guid plantId) 
+        public HttpResponseMessage GetLowWaterOptions(Guid? plantId = null, string plantType = null) 
         {
             //send in a plant id and get low water options back
             HttpResponseMessage resp = null;
 
             try
             {
-                //Plant plant = _plantService.GetPlantById(plantId);
-                //List<Plant> plants = _plantService.GetAlternativePlants(plant.PlantType);
-                //resp = Request.CreateResponse(HttpStatusCode.OK, plants);
+                if (plantId != null && !string.IsNullOrEmpty(plantType))
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "This method cannot accept two parameters. Please send one or the other.");
+                }
+
+                IEnumerable<PlantAdvancedModel> plants = null;
+
+                if (plantId != null && plantId.HasValue)
+                {
+                    Plant plant = _plantService.GetPlantById(plantId.Value);
+                    plants = _plantService.GetAlternativePlantsByType(plant.PlantType);
+                }
+                
+                if (string.IsNullOrEmpty(plantType))
+                {
+                    plants = _plantService.GetAllAlternativePlants();
+                }
+                else
+                {
+                    switch(plantType)
+                    {
+                        case "groundcover":
+                            plants = _plantService.GetAlternativePlantsByType(PlantType.GroundCover);
+                            break;
+                        case "shrub":
+                            plants = _plantService.GetAlternativePlantsByType(PlantType.Shrub);
+                            break;
+                        case "tree":
+                            plants = _plantService.GetAlternativePlantsByType(PlantType.Tree);
+                            break;
+                        case "deco":
+                            plants = _plantService.GetAlternativePlantsByType(PlantType.Decorative);
+                            break;
+                        default: _plantService.GetAllAlternativePlants();
+                            break;
+                    }
+                }
             }
             catch (Exception ex)
             {

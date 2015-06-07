@@ -1,0 +1,52 @@
+﻿Merge branch 'master' into kleen_build
+
+Conflicts:
+	sabio_hackforla/Scripts/_references.js
+	sabio_hackforla/Views/Shared/_Layout.cshtml
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch kleen_build
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   sabio_hackforla/Content/Site.css
+#	new file:   sabio_hackforla/Content/img/logo/._pLAnt_cursive_logo.jpg
+#	new file:   sabio_hackforla/Content/img/logo/._pLAnt_cursive_logo.png
+#	new file:   sabio_hackforla/Content/img/single/leaf.jpg
+#	new file:   sabio_hackforla/Content/img/single/nature-sunny-summer-yellow.jpg
+#	modified:   sabio_hackforla/Controllers/PlantApiController.cs
+#	modified:   sabio_hackforla/Scripts/_references.js
+#	new file:   sabio_hackforla/Scripts/angular-animate.js
+#	new file:   sabio_hackforla/Scripts/angular-animate.min.js
+#	new file:   sabio_hackforla/Scripts/angular-route.js
+#	new file:   sabio_hackforla/Scripts/angular-route.min.js
+#	new file:   sabio_hackforla/Scripts/angular.js
+#	new file:   sabio_hackforla/Scripts/angular.min.js
+#	deleted:    sabio_hackforla/Scripts/jquery-1.10.2.min.js
+#	deleted:    sabio_hackforla/Scripts/jquery-1.10.2.min.map
+#	new file:   sabio_hackforla/Scripts/jquery-2.1.4.intellisense.js
+#	renamed:    sabio_hackforla/Scripts/jquery-1.10.2.js -> sabio_hackforla/Scripts/jquery-2.1.4.js
+#	new file:   sabio_hackforla/Scripts/jquery-2.1.4.min.js
+#	new file:   sabio_hackforla/Scripts/jquery-2.1.4.min.map
+#	modified:   sabio_hackforla/Scripts/jquery.validate-vsdoc.js
+#	modified:   sabio_hackforla/Scripts/jquery.validate.js
+#	modified:   sabio_hackforla/Scripts/jquery.validate.min.js
+#	modified:   sabio_hackforla/Service/PlantService.cs
+#	modified:   sabio_hackforla/Views/Garden/Recommendations.cshtml
+#	modified:   sabio_hackforla/Views/Home/Index.cshtml
+#	modified:   sabio_hackforla/Views/Indentification/Index.cshtml
+#	modified:   sabio_hackforla/Views/Shared/_Layout.cshtml
+#	modified:   sabio_hackforla/packages.config
+#	modified:   sabio_hackforla/sabio_hackforla.csproj
+#
+# Untracked files:
+#	amwzpqev.100.txt
+#
+

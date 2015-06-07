@@ -18,12 +18,12 @@ namespace sabio_hackforla.Service
         private static String ApiKey = ConfigurationManager.AppSettings["ApiKey"];
         private static String ApiId = ConfigurationManager.AppSettings["ApiId"];
         private static String _BaseUrl = "http://garden.vsapi01.com/api-search/";
-        
+
 
         public JToken GetPlantFromJustVisual(string imagePath)
         {
             WebClient client = new WebClient();
-            
+
             string uri;
 
             uri = _BaseUrl + "by-url?url=" + imagePath + "&apiid=" + ApiId + "&apikey=" + ApiKey;
@@ -41,10 +41,37 @@ namespace sabio_hackforla.Service
             return plant;
         }
 
-        public IEnumerable<PlantAdvancedModel> GetAlternativePlants(PlantType pType)
+        public IEnumerable<PlantAdvancedModel> GetAllAlternativePlants()
         {
             List<PlantAdvancedModel> plants = new List<PlantAdvancedModel>();
-                    
+
+            GroundCoverDTO dto = new GroundCoverDTO();
+            plants.Add(dto.GetEuphorbia());
+            plants.Add(dto.GetOenothera());
+            plants.Add(dto.GetZauschneria());
+
+            ShrubDTO shrubdto = new ShrubDTO();
+            plants.Add(shrubdto.GetCaesalpinia());
+            plants.Add(shrubdto.GetFouquieria());
+            plants.Add(shrubdto.GetLarrea());
+
+            TreeDTO treedto = new TreeDTO();
+            plants.Add(treedto.GetBluePaloVerde());
+            plants.Add(treedto.GetDesertWillow());
+            plants.Add(treedto.GetSilkFloss());
+
+            DecorativeDTO decodto = new DecorativeDTO();
+            plants.Add(decodto.GetEchinocactus());
+            plants.Add(decodto.GetLotus());
+            plants.Add(decodto.GetOpuntia());
+
+            return plants;
+        }
+
+        public IEnumerable<PlantAdvancedModel> GetAlternativePlantsByType(PlantType pType)
+        {
+            List<PlantAdvancedModel> plants = new List<PlantAdvancedModel>();
+
             switch ((int)pType)
             {
                 case (int)PlantType.GroundCover:
@@ -94,7 +121,7 @@ namespace sabio_hackforla.Service
         public List<GeoCode> GetNurseries(string zip = null, GeoCode location = null)
         {
             List<GeoCode> nurseries = null;
-            
+
             if (!string.IsNullOrEmpty(zip))
             {
 
