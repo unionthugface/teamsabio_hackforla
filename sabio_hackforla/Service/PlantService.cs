@@ -35,9 +35,14 @@ namespace sabio_hackforla.Service
             return o;
         }
 
-        public Plant GetPlantById(Guid plantId)
+        public PlantAdvancedModel GetPlantById(Guid plantId)
         {
-            Plant plant = null;
+            //Plant plant = new Plant();
+
+            PlantAdvancedModel plant = new PlantAdvancedModel();
+            ShrubDTO shrubdto = new ShrubDTO();
+            plant = shrubdto.GetYellowHibiscus();
+           
             return plant;
         }
 
