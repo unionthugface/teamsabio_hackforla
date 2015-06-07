@@ -242,6 +242,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
+    <Compile Include="Controllers\UploadApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
@@ -358,13 +359,13 @@
     <Content Include="Views\AddImage\Index.cshtml" />
     <Content Include="Views\Garden\MyGarden.cshtml" />
     <Content Include="Views\Garden\Recommendations.cshtml" />
-    <Content Include="Views\Indentification\Index.cshtml" />
     <Content Include="Scripts\pLAnt\pLAnt.global.js" />
     <Content Include="Views\Weather\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="tmp\" />
+    <Folder Include="Views\Community\" />
     <Folder Include="Views\Matching\" />
     <Folder Include="Views\UserApi\" />
     <Folder Include="Views\UserService\" />
