@@ -42,8 +42,19 @@ plant.page.recomControllerFactory = function ($scope, $baseController, $recomSer
     function _onSuccess(result) {
         viewModel.notify(function () {
             viewModel.item = JSON.parse(result.responseText);
-            console.log(viewModel.item);
+            viewModel.item.forEach(function (plant) {
+                switch (plant.WaterNeed) {
+                    case 1: plant.WaterType = "Low"; break;
+                    case 2: plant.WaterType = "Moderately Low"; break;
+                    case 3: plant.WaterType = "Moderate"; break;
+                    case 4: plant.WaterType = "Moderately High"; break;
+                    case 5: plant.WaterType = "High"; break;
+
+
+                }});
+
         });
+            console.log(viewModel.item);
     }
 
     function _onResultError(jqXhr, error) {
