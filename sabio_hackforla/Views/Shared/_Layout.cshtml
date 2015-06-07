@@ -31,10 +31,10 @@
                 <li>@Html.ActionLink("Submit a pLAnt", "Index", "Help")</li>
                 <li>@Html.ActionLink("Volunteer", "Index", "Home")</li>
                 <li>@Html.ActionLink("Recommendations", "Index", "Help")</li>
-                <li>@Html.ActionLink("My Garden", "Index", "Home")</li>
-                <li>@Html.ActionLink("My Commnunity", "Index", "Help")</li>
+                <li>@Html.ActionLink("My Garden", "Index", "Garden")</li>
+                <li>@Html.ActionLink("My Community", "Index", "Help")</li>
                     <!--<li>Html.ActionLink("Login", "Index", "Help")</li>-->
-                    <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger"@*href="#modal1"*@>login</a></li>
                                       
             </ul>
                 <!-- Modal Structure -->
@@ -46,7 +46,7 @@
                 <li>@Html.ActionLink("Recommendations", "Index", "Help")</li>
               
                 <li>@Html.ActionLink("Login", "Index", "Help")</li>
-                    <li><a class="waves-effect waves-light btn modal-trigger" " href=" #modal1">Login</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" @*href=" #modal1"*@>Login</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
