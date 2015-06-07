@@ -5,12 +5,6 @@
 <head>
     <title></title>
     <style>
-        * {
-            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-            -moz-box-sizing: border-box; /* Firefox, other Gecko */
-            box-sizing: border-box; /* Opera/IE 8+ */
-        }
-
         .container {
             width: 80%;
         }
@@ -34,7 +28,7 @@
             }
 
         .btn-floating {
-            text-transform: lowercase;
+            position: fixed;
         }
 
         .card .card-title {
@@ -43,20 +37,22 @@
     </style>
 </head>
 
+
+<div class="col s6 m4 l2"><a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-content-add"></i></a></div>
+
 <div class="container" data-ng-controller="gardenController as garden" id="PlantControllerElement">
     <div class="row">
         <div class="col s12 m12 l12"><h3>My Garden</h3></div>
-        <div class="col s6 m4 l2"><a class="btn-floating btn-large waves-effect waves-light red"><i>add</i></a></div>
 
     </div>
     <!--Card Reveals-->
-    <div class="row">
-        <div class="center card col s12 m4 l4">
+    <div class="row valign">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg/800px-Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg">
+                <img class="activator" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg/800px-Flame_Azalea_Rhododendron_calendulaceum_%27Mandarin_Red%27_Leaf_Closeup_3264px.jpg">
             </div>
-            <div class=" activator card-content">
-                <span class="card-title grey-text text-darken-4">Flame Azalea<i class="mdi-navigation-more-vert right"></i></span>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Flame Azalea<i class="mdi-navigation-more-vert right"></i></span>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -64,12 +60,12 @@
                 <p>Flame azalea prefers moist soil but never soggy, waterlogged soil. This is why well-draining soil is so important. Water flame azalea generously when the top of the soil feels slightly dry, wetting the soil to a depth of 8 to 12 inches. Avoid overhead watering, and keep the foliage as dry as possible. Watering at the base of the plant with a garden hose or soaker is best, because this azalea is susceptible to fungal and bacterial diseases in humid conditions. Proper watering, adequate air circulation and a neat, tidy garden help prevent moisture-related diseases.</p>
             </div>
         </div>
-        <div class="center card col s12 m4 l4">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://128.253.192.70/users/dws/12_10_06/EriogonumArborescens/EriogonumArborescens3.JPG">
+                <img class="activator" src="http://128.253.192.70/users/dws/12_10_06/EriogonumArborescens/EriogonumArborescens3.JPG">
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Santa Cruz Island buckwheat (Eriogonum arborescens)<i class="mdi-navigation-more-vert right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Santa Cruz Island buckwheat (Eriogonu...)<i class="mdi-navigation-more-vert right"></i></span>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -77,12 +73,12 @@
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
         </div>
-        <div class="center card col s12 m4 l4">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://plants.usda.gov/gallery/large/meli7_001_lhp.jpg">
+                <img class="activator" src="http://plants.usda.gov/gallery/large/meli7_001_lhp.jpg">
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Snow in Summer (Melaleuca linariifolia)<i class="mdi-navigation-more-vert right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Snow in Summer (Melaleuca...)<i class="mdi-navigation-more-vert right"></i></span>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -91,13 +87,13 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="card col s12 m4 l4">
+    <div class="row valign">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://www.hydrangeashydrangeas.com/images/Identify/mac_mop_leaf.jpg">
+                <img class="activator" src="http://www.notsohollowfarm.ca/wp-content/uploads/2014/02/Peachleaf-Willow-leaf-1.jpg">
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"> Mophead (Hydrangea Macrophylla)<i class="mdi-navigation-more-vert right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Peachleaf willow<i class="mdi-navigation-more-vert right"></i></span>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -105,9 +101,9 @@
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
         </div>
-        <div class="card col s12 m4 l4">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://www.herbalteasonline.com/wp-content/uploads/2015/04/Mulberry-Leaf.jpg">
+                <img class="activator" src="http://www.herbalteasonline.com/wp-content/uploads/2015/04/Mulberry-Leaf.jpg">
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">Mullberry<i class="mdi-navigation-more-vert right"></i></span>
@@ -118,12 +114,27 @@
                 <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
         </div>
-        <div class="card col s12 m4 l4">
+        <div class="center card small col s12 m4 l4">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" ng-src="http://www.nhm.ac.uk/resources-rx/images/1008/trk4-cherrylaurel-leaf-banner_67030_1.jpg">
+                <img class="activator" src="http://www.nhm.ac.uk/resources-rx/images/1008/trk4-cherrylaurel-leaf-banner_67030_1.jpg">
             </div>
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Cherry laurel (Prunus laurocerasus)<i class="mdi-navigation-more-vert right"></i></span>
+                <span class="card-title activator grey-text text-darken-4">Cherry laurel (Pru...)<i class="mdi-navigation-more-vert right"></i></span>
+                <p><a href="#">Unplant</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Watering<i class="mdi-navigation-close right"></i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row valign">
+        <div class="center card small col s12 m4 l4">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://www.thefitindian.com/wp-content/uploads/2013/10/curry-leaves.jpg">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Curry Tree (Mur...)<i class="mdi-navigation-more-vert right"></i></span>
                 <p><a href="#">Unplant</a></p>
             </div>
             <div class="card-reveal">
@@ -153,6 +164,7 @@
     </div>
 
 </div>
+
 <script src="~/Scripts/MyGarden.js"></script>
 
 
