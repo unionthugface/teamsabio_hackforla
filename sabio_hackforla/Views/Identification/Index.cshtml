@@ -9,7 +9,6 @@
             </div>
             <div class="section container">
                 <p class="flow-text">Is your <em>plant</em> <break>name or <em>likeness</em> here?</break>
-                <p>Please scroll through the images and names to check.</p>
                 <div class="container valign-wrapper">
                     <div class="col offset-s1 s4 valign">
                         <a href="thumbsup"><i class="medium mdi-action-thumb-up green-text"></i></a>
@@ -18,12 +17,12 @@
                         <a href="thumbsdown"><i class="medium mdi-action-thumb-down brown-text" data-ng-submit="plants.submit()"></i></a>
                     </div>
                 </div>
-                <div class="center-align" ng-repeat="images in plants.item track by images.id">
+                <div class="container valign-wrapper" ng-repeat="images in plants.item track by images.id">
+                    <br />
                     <span class="col s4">Plant Name: {{images.plantNames}}</span>
                     <img class="col s6" ng-src={{images.imageUrl}}>
 
                 </div>
-
             </div>
         </div>
     </div>

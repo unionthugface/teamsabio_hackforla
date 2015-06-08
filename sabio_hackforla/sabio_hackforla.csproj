@@ -338,7 +338,6 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\plant.app.js" />
     <Content Include="Scripts\plant.ng.app.js" />
-    <Content Include="Scripts\plant.ng.identify.js" />
     <Content Include="Scripts\Recommendation.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
