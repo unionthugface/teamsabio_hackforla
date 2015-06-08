@@ -13,15 +13,23 @@
             margin: 0px auto;
         }
 
-        .card {
-            padding-left: 2px;
-            padding-right: 2px;
+
+        .card .card-title {
+            font-size: 14px;
         }
 
 
         .btn-floating {
             text-transform: lowercase;
         }
+
+                .card {
+            padding-top: 11px;
+        }
+
+            .card .card-image {
+                padding-top: 11px;
+            }
     </style>
 </head>
 
@@ -67,7 +75,7 @@
                                 <!-- TEMPLATE - START -->
 
                                 <div class="col s12 m6 l6">
-                                    <div class="card small">
+                                    <div class="card small center col s12 m4 l4">
                                         <div class="card-image">
                                             <img class="activator" data-ng-src={{rec.ImagePath}} />
                                         </div>
