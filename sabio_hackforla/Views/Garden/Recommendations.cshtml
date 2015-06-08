@@ -7,22 +7,29 @@
 <head>
     <title></title>
     <style>
-        .container {
-            width: 80%;
-        }
+
 
         .center {
             margin: 0px auto;
         }
 
-        .card {
-            padding-left: 2px;
-            padding-right: 2px;
+
+        .card .card-title {
+            font-size: 14px;
         }
+
 
         .btn-floating {
             text-transform: lowercase;
         }
+
+                .card {
+            padding-top: 11px;
+        }
+
+            .card .card-image {
+                padding-top: 11px;
+            }
     </style>
 </head>
 
@@ -31,67 +38,67 @@
         <div class="row">
             <div class="center col s12 m12 l12">
                 <h2>Is your plant the best choice?</h2>
+                @*</div>*@
+
             </div>
 
-        </div>
 
+            <div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
+                <div class="container page-content">
 
-        <div class="container" id="RecomControllerElement" ng-controller="recomController as recommendations">
-            <div class="container page-content">
-
-                <!--Uploaded Picture-->
-                <div class="row">
-                    <div class="grid-example col s12 m4 l8">
-                        <span class="center flow-text">Your Plant</span>
-                        <img class="responsive-img" src="@ViewBag.Image"></div>
-                </div>
-
-                <!--Second Title-->
-
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <h4>Recommended</h4>
+                    <!--Uploaded Picture-->
+                    <div class="row">
+                        <div class="grid-example col s12 m4 l8">
+                            <span class="center flow-text">Your Plant</span>
+                            <img class="responsive-img" src="@ViewBag.Image">
+                        </div>
                     </div>
 
-                </div>
-                <!--Cards-->
+                    <!--Second Title-->
 
-                <div class="divider"></div>
-                <div class="section">
                     <div class="row">
-
-                        <!--Card-->
-                        <div id="recommendationTemplate" class="Template" ng-repeat="rec in recommendations.item">
-
-
-                            <!-- TEMPLATE - START -->
-
-                            <div class="col s12 m4 l3">
-                                <div class="card">
-
-                                    <div class="card-image">
-                                        <img data-ng-src={{rec.ImagePath}} />
-                                        <span class="card-title" data-ng-model="rec.LatinName">{{rec.LatinName}}</span>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{rec.WaterType}}</p>
-                                        <p class="truncate">{{rec.PlantDescription}}</p>
-                                    </div>
-                                    <div class="card-action">
-                                        <a href="#">This is a link</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col s12 m12 l12">
+                            <h4>Recommended</h4>
                         </div>
 
                     </div>
+                    <!--Cards-->
+
+                    <div class="divider col s12 m12 l12"></div>
+                    <div class="section">
+                        <div class="row ">
+
+                            <!--Card-->
+                            <div id="recommendationTemplate" class="Template" ng-repeat="rec in recommendations.item">
 
 
+                                <!-- TEMPLATE - START -->
+
+                                <div class="col s12 m6 l6">
+                                    <div class="card small center col s12 m4 l4">
+                                        <div class="card-image">
+                                            <img class="activator" data-ng-src={{rec.ImagePath}} />
+                                        </div>
+                                        <div class="card-content">
+                                            <span class="card-title activator blue-text" style="font-size:16px" data-ng-model="rec.LatinName">{{rec.LatinName}}<i class="mdi-navigation-more-vert right"></i></span>
+                                            <p>Water Usage: {{rec.WaterType}}</p>
+                                        </div>
+                                        <div class="card-reveal">
+                                            <span class="card-title" style="color:black" data-ng-model="rec.LatinName"><i class="mdi-navigation-close right"></i>{{rec.LatinName}}</span>
+                                            <p>{{rec.PlantDescription}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
 
                 </div>
-
             </div>
-
         </div>
     </div>
 
