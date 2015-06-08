@@ -240,7 +240,7 @@
     <Compile Include="Controllers\AddImageController.cs" />
     <Compile Include="Controllers\GardenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IndentificationController.cs" />
+    <Compile Include="Controllers\IdentificationController.cs" />
     <Compile Include="Controllers\PlantApiController.cs" />
     <Compile Include="Controllers\UploadApiController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
@@ -335,6 +335,7 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\plant.app.js" />
     <Content Include="Scripts\plant.ng.app.js" />
+    <Content Include="Scripts\plant.ng.identify.js" />
     <Content Include="Scripts\Recommendation.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -362,6 +363,7 @@
     <Content Include="Views\Indentification\Index.cshtml" />
     <Content Include="Scripts\pLAnt\pLAnt.global.js" />
     <Content Include="Views\Weather\Index.cshtml" />
+    <Content Include="Views\Identification\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

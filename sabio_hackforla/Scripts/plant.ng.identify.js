@@ -1,15 +1,8 @@
-﻿plant.page.getPhotos = {};
-
-plant.page.getPhotos.get = function () {
-	$.get("/plant/jvquery", null, onSuccess);
-	$.get("", null, onSuccess);
-}
-
+﻿
 plant.page.startUp = function () {
 	plant.page.idController = plant.ng.getControllerInstance($('#idController'));
-	plant.page.handlers.getFirstPhoto();
+//	plant.page.getPhotos.get();
 }
-
 
 plant.services.idfactory = function ($baseService) {
 	var plantServiceObj = plant.page.getPhotos;
@@ -17,85 +10,71 @@ plant.services.idfactory = function ($baseService) {
 	return newService;
 }
 
-
 plant.page.idControllerFactory = function ($scope, $baseController, $idService) {
 	var viewModel = this;
 	viewModel.item = null;
-	viewModel.$idService = $idService;
-	viewModel.receivedItems = _onSuccess;
+	viewModel.idService = $idService;
+	viewModel.onSuccess = _onSuccess;
 	viewModel.onResultError = _onResultError;
-	viewModel.decide = _decide;
-	viewModel.getOriginal = _getOriginal;
-	viewModel.getCompare = _getCompare;
+	
+	viewModel.getPlants = _getPlants;
 
 	$.extend(viewModel, $baseController);
-	viewModel.notify = viewModel.$idService.getNotifier($scope);
+	viewModel.notify = viewModel.idService.getNotifier($scope);
 
 	render();
 
 	function render() {
-		viewModel.$idService.getOriginal();
-		viewModel.$idService.getCompare();
-
+	    //viewModel.getCompare();
+	    viewModel.getPlants('http://sabiohack4la.azurewebsites.net/img/yellow_hibiscus.jpg', onSuccess, onResultError);
 	}
 
-	function _getCompare(img) {
-		viewModel.notify(function () {
-			var response,
-				plantList = {};
-			$.getJSON("/plant/jvquery", function onSuccess(response) {
 
-				plantList = response;
-				i = 0;
+	function _getPlants(imageUrl, onSuccess, onError) {
 
-				localStorage.setItem("Plants", response);
-				for (var i; i === response.length; i++) {
-					console.log(response.images.key + "," + response.image.value);
-				}
-			});
-		}
-				);
+	    var imagePath;
 
+	    var url = "/plant/jvquery/" ;
+	    var settings = {
+	        dataType: JSON,
+	        type: "get",
+	        data: {
+	            imagePath: imageUrl
+	        },
+	        success: onSuccess,
+	        error: onSuccess,
+	    }
+	    $.ajax(url, settings);
 	}
-	function _getOriginal(img) {
-		var imageId;
-		viewModel.notify(function () {
-			viewModel.$idService.get(imageId, viewModel.receivedItems, viewModel.onResultError);
 
-		})
-	};
-	function _getComparisons(img) {
-		var comparisonList = [];
-		viewModel.notify(function () {
-			viewModel.$idService.get(imageId, viewModel.receivedItems, viewModel.onResultError);
+	//function _getCompare(originalUrl) {
+	//	viewModel.notify(function () {
+	//		var response,
+	//			plantList = {};
 
-		})
-	};
+	//		viewModel.$scope.getJSON("/plant/jvquery" + originalUrl, function onSuccess(response) {
 
+	//			plantList = response;
+	//			i = 0;
 
-	function _decide(vote) {
-		viewModel.notify(function () {
-			//  send thumbs down  to next result
-			//$('.mdi-action-thumb-down').click(function () {
+	//			localStorage.setItem("Plants", response);
+	//			for (var i; i === response.length; i++) {
+	//				console.log(response.images.key + "," + response.image.value);
+	//			}
+	//		});
+	//	}
+	//			);
 
+	//}
 
-			//var data = viewModel.item;
-			//if (image != null) {
-			//	viewModel.idService.post(data, viewModel.returnHome, viewModel.onResultError);
-			//} else {
-			//	console.log("didn't have photo to upload");
-			//	console.log(data);
-			//}
-		})
-	};
 
 	function _onSuccess(result) {
-		viewModel.notify(function () {
-			viewModel.item = result.item;
-			console.log("Hello");
-		});
-	}
 
+	    //viewModel.item = JSON.parse(result.responseText);
+	    viewModel.item = result.item;
+		    console.log("Hello");
+		    console.log(viewModel.item);
+	}
 
 	function _onResultError(jqXhr, error) {
 
