@@ -17,10 +17,10 @@
                         <a href="thumbsdown"><i class="medium mdi-action-thumb-down brown-text" data-ng-submit="plants.submit()"></i></a>
                     </div>
                 </div>
-                <div class="container valign-wrapper" ng-repeat="images in plants.item track by images.id">
+                <div class="container valign-wrapper" ng-repeat="image in plants.item track by image.id">
                     <br />
-                    <span class="col s4">Plant Name: {{images.plantNames}}</span>
-                    <img class="col s6" ng-src={{images.imageUrl}}>
+                    <span class="col s4">Plant Name: {{image.plantNames}}</span>
+                    <img class="col s6" ng-src={{image.imageUrl}}>
 
                 </div>
             </div>

@@ -40,7 +40,7 @@ namespace sabio_hackforla.Controllers
             string imagePath = String.Format("http://{0}{1}{2}", Request.Url.Host, "/img/", postedFilePath);
             //calls third-party api
 
-            return View("/Views/Indentification/Index.cshtml", new { imagePath = imagePath });
+            return View("/Views/Identification/Index.cshtml", new { imagePath = imagePath });
         }
     }
 }
